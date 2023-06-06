@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('jenis_pelanggan', function (Blueprint $table) {
             $table->char('IDJenis', 10)->primary()->required;
-            $table->integer('Tarif');
+            $table->integer('TarifPerKubik');
+            $table->integer('TarifLebihBatasan');
             $table->integer('Batasan');
         });
     }

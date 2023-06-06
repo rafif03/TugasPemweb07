@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('kasir', function (Blueprint $table) {
             $table->char('NoKasir', 10)->primary()->required;
-            $table->char('Email', 50)->required;
+            $table->char('Email', 50);
+            $table->char('NoTelp', 20)->required;
             $table->char('NoRekening', 8)->required;
             $table->char('IDUser', 10)->required;
 

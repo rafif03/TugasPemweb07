@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('pelanggan', function (Blueprint $table) {
             $table->char('NoPelanggan', 10)->primary()->required;
-            $table->char('NoTelp', 10)->required;
+            $table->char('NoTelp', 20)->required;
             $table->char('Alamat', 100)->required;
-            $table->char('Email', 50)->required;
+            $table->char('Email', 50);
             $table->char('IDUser', 10)->required;
             $table->char('IDJenis', 10)->required;
             $table->char('NoPetugas', 10)->required;

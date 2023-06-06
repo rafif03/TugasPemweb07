@@ -15,13 +15,13 @@ return new class extends Migration
             $table->char('IDTagihan', 10)->primary()->required;
             $table->date('TglDibuat')->required;
             $table->integer('Pengunaan');
+            $table->integer('PengunaanLebih');
             $table->integer('Biaya');
-            $table->char('Bulan', 10);
-            $table->char('IDUser', 10);
-            $table->boolean('Status');
+            $table->char('Bulan', 10)->required;
+            $table->boolean('Status')->required;
             $table->date('TglBayar');
             $table->char('NoPelanggan', 10)->required;
-            $table->char('NoKasir', 10)->required;
+            $table->char('NoKasir', 10);
 
             $table->foreign('IDUser')->references('IDUser')->on('users');
             $table->foreign('NoPelanggan')->references('NoPelanggan')->on('pelanggan');
