@@ -23,7 +23,6 @@ return new class extends Migration
             $table->char('NoPelanggan', 10)->required;
             $table->char('NoKasir', 10);
 
-            $table->foreign('IDUser')->references('IDUser')->on('users');
             $table->foreign('NoPelanggan')->references('NoPelanggan')->on('pelanggan');
             $table->foreign('NoKasir')->references('NoKasir')->on('kasir');
         });
