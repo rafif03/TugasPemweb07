@@ -9,8 +9,9 @@ class Users extends Model
 {
     protected $table = 'users';
     protected $primaryKey = 'IDUser';
-
+    public $timestamps = false;
     protected $fillable = [
+        'IDUser',
         'IDRole',
         'NamaUser',
         'Username',

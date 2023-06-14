@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\JenisPelanggan;
+use App\Models\Jenis_Pelanggan;
 use Illuminate\Http\Request;
 
 class JenisPelangganController extends Controller
 {
     public function index()
     {
-        $jenisPelanggans = JenisPelanggan::all();
+        $jenisPelanggans = Jenis_Pelanggan::all();
 
         return view('jenis_pelanggans.index', compact('jenisPelanggans'));
     }
@@ -21,7 +21,7 @@ class JenisPelangganController extends Controller
 
     public function store(Request $request)
     {
-        $jenisPelanggan = JenisPelanggan::create($request->all());
+        $jenisPelanggan = Jenis_Pelanggan::create($request->all());
 
         return redirect()->route('jenis_pelanggans.index')
             ->with('success', 'Jenis Pelanggan created successfully.');
@@ -29,21 +29,21 @@ class JenisPelangganController extends Controller
 
     public function show($id)
     {
-        $jenisPelanggan = JenisPelanggan::findOrFail($id);
+        $jenisPelanggan = Jenis_Pelanggan::findOrFail($id);
 
         return view('jenis_pelanggans.show', compact('jenisPelanggan'));
     }
 
     public function edit($id)
     {
-        $jenisPelanggan = JenisPelanggan::findOrFail($id);
+        $jenisPelanggan = Jenis_Pelanggan::findOrFail($id);
 
         return view('jenis_pelanggans.edit', compact('jenisPelanggan'));
     }
 
     public function update(Request $request, $id)
     {
-        $jenisPelanggan = JenisPelanggan::findOrFail($id);
+        $jenisPelanggan = Jenis_Pelanggan::findOrFail($id);
         $jenisPelanggan->update($request->all());
 
         return redirect()->route('jenis_pelanggans.index')
@@ -52,7 +52,7 @@ class JenisPelangganController extends Controller
 
     public function destroy($id)
     {
-        JenisPelanggan::findOrFail($id)->delete();
+        Jenis_Pelanggan::findOrFail($id)->delete();
 
         return redirect()->route('jenis_pelanggans.index')
             ->with('success', 'Jenis Pelanggan deleted successfully.');
