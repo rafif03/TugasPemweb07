@@ -10,6 +10,7 @@ class Kasir extends Model
     protected $table = 'kasir';
     protected $primaryKey = 'NoKasir';
 
+    public $timestamps = false;
     protected $fillable = [
         'NoTelp',
         'Email',

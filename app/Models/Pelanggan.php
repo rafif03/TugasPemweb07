@@ -10,7 +10,9 @@ class Pelanggan extends Model
     protected $table = 'pelanggan';
     protected $primaryKey = 'NoPelanggan';
 
+    public $timestamps = false;
     protected $fillable = [
+        'NoPelanggan',
         'IDUser',
         'NoTelp',
         'Email',

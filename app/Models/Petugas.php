@@ -10,7 +10,9 @@ class Petugas extends Model
     protected $table = 'petugas';
     protected $primaryKey = 'NoPetugas';
 
+    public $timestamps = false;
     protected $fillable = [
+        'NoPetugas',
         'IDUser',
         'NoTelp',
         'Area',

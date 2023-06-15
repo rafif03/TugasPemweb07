@@ -10,8 +10,11 @@ class Jenis_Pelanggan extends Model
     protected $table = 'jenis_pelanggan';
     protected $primaryKey = 'IDJenis';
 
+    public $timestamps = false;
     protected $fillable = [
-        'Tarif',
+        'IDJenis',
+        'TarifPerKubik',
+        'TarifLebihBatasan',
         'Batasan',
     ];
 }
