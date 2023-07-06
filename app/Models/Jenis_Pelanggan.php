@@ -12,7 +12,6 @@ class Jenis_Pelanggan extends Model
 
     public $timestamps = false;
     protected $fillable = [
-        'IDJenis',
         'TarifPerKubik',
         'TarifLebihBatasan',
         'Batasan',

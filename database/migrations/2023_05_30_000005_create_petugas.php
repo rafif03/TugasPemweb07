@@ -12,12 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('petugas', function (Blueprint $table) {
-            $table->char('NoPetugas', 10)->primary()->required;
-            $table->char('NoTelp', 20)->required;
-            $table->char('Area', 50)->required;
-            $table->char('IDUser', 10)->required;
+            $table->id();
+            $table->char('NoTelp', 20);
+            $table->char('Area', 50);
+            $table->unsignedBigInteger('IDUser');
 
-            $table->foreign('IDUser')->references('IDUser')->on('users');
+            $table->foreign('IDUser')->references('id')->on('users');
         });
     }
 

@@ -13,16 +13,20 @@
             <td>ID User</td>
             <td>Username</td>
             <td>Name</td>
+            <td>Pass</td>
+            <td>Role</td>
             <td>Manage</td>
         </tr>
         @foreach($users as $user)
         <tr>
-            <td>{{ $user->IDUser }}</td>
+            <td>{{ $user->id }}</td>
             <td>{{ $user->Username }}</td>
-            <td>{{ $user->NamaUser }}</td>
+            <td>{{ $user->Nama }}</td>
+            <td>{{ $user->Password }}</td>
+            <td>{{ $user->IDRole }}</td>
             <td>
-                <a href="{{ route('users.edit', $user->IDUser) }}" type="button" class="btn btn-info" >Edit</a>
-                <form action="{{ route('users.destroy', $user->IDUser) }}" type="button" method="post" onsubmit="return confirm('Yakin?')">
+                <a href="{{ route('users.edit', $user->id) }}" type="button" class="btn btn-info" >Edit</a>
+                <form action="{{ route('users.destroy', $user->id) }}" type="button" method="post" onsubmit="return confirm('Yakin?')">
                     @csrf
                     @method('DELETE')
                     <button class="btn btn-danger">Hapus</button>

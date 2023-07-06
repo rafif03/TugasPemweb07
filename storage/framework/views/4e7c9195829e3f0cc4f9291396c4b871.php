@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-    <form action=" <?php echo e(route('users.update', $users->IDUser)); ?>" method="post">
+    <form action=" <?php echo e(route('users.update', $users->id)); ?>" method="post">
     <?php echo csrf_field(); ?>
     <?php echo method_field('PUT'); ?>
         <table class="table table-info table-hover table-striped">
@@ -15,7 +15,7 @@
             </tr>
             <tr>
                 <td>ID User</td>
-                <td><input type="text" name="IDUser" value="<?php echo e($users->IDUser); ?>" required>
+                <td><input type="text" name="id" value="<?php echo e($users->id); ?>" disabled>
             </tr>
             <tr>
                 <td>Username</td>
@@ -23,11 +23,11 @@
             </tr>
             <tr>
                 <td>Password</td>
-                <td><input type="text" name="PassUser" required>
+                <td><input type="text" name="Password" required>
             </tr>
             <tr>
                 <td>Nama Lengkap</td>
-                <td><input type="text" name="NamaUser" required>
+                <td><input type="text" name="Nama" required>
             </tr>
             <tr>
                 <td>ID Role</td>

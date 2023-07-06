@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Users;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     public function index()
     {
-        $users = Users::all();
+        $users = User::all();
 
         return view('users.index', compact('users'));
     }
@@ -20,7 +21,12 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-        Users::create($request->all());
+        User::create([
+            'Nama'      => $request->input('Nama'),
+            'Username'  => $request->input('Username'),
+            'Password'  => $request->input('Password'),
+            'IDRole'    => $request->input('IDRole')
+        ]);
 
         return redirect()->route('users.index')
             ->with('success', 'User created successfully.');
@@ -28,21 +34,21 @@ class UserController extends Controller
 
     public function show($id)
     {
-        $users = Users::findOrFail($id);
+        $users = User::findOrFail($id);
 
         return view('users.show', compact('users'));
     }
 
     public function edit($id)
     {
-        $users = Users::findOrFail($id);
+        $users = User::findOrFail($id);
 
         return view('users.edit', compact('users'));
     }
 
     public function update(Request $request, $id)
     {
-        $users = Users::findOrFail($id);
+        $users = User::findOrFail($id);
         $users->update($request->all());
 
         return redirect()->route('users.index')
@@ -51,7 +57,7 @@ class UserController extends Controller
 
     public function destroy($id)
     {
-        $user = Users::findOrFail($id);
+        $user = User::findOrFail($id);
         $user->delete();
 
         return redirect()->route('users.index')

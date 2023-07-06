@@ -1,7 +1,9 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +21,6 @@ Route::get('/', function () {
 
 Route::resource('/users', UserController::class);
 
-Route::get('/login', function () {
-    return view('login');
-});
+
+Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/login', [LoginController::class, 'authenticate']);

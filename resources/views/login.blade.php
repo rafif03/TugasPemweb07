@@ -17,37 +17,35 @@
     </style>
 </head>
 <body>
-
-    <table class="table table-striped d-flex justify-content-center">
-        <tr><td colspan="2"><h4>Login</h4></td></tr>
-        <tr>
-            <td>Username</td>
-            <td><input type="text" id="user" required></input></td>
-        </tr>
-        <tr>
-            <td>Pass</td>
-            <td><input type="text" id="pass" required></input></td>
-        </tr>
-        <tr>
-            <td>Remember Me</td>
-            <td><input type="checkbox" id="remember"></input></td>
-        </tr>
-        <tr>
-            <td>Don't Have Account?</td>
-            <td>
-              <a href=""><button type="button" style="float: right" class="btn btn-sm btn-outline-primary btn-lg ">Register</button></a>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <button type="button" style="float: right" class="btn btn-primary btn-lg ">Login</button>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <h3 id="Hasil"></h3>
-            </td>
-        </tr>
-    </table>
+    <form method="POST" action="{{ route('login') }}">
+    @csrf
+        <table class="table table-striped d-flex justify-content-center">
+            <tr><td colspan="2"><h4>Login</h4></td></tr>
+            <tr>
+                <td>Username</td>
+                <td><input type="text" name="Username" required></input></td>
+            </tr>
+            <tr>
+                <td>Pass</td>
+                <td><input type="text" name="Password" required></input></td>
+            </tr>
+            <tr>
+                <td>Don't Have Account?</td>
+                <td>
+                <a href=""><button type="button" style="float: right" class="btn btn-sm btn-outline-primary btn-lg ">Register</button></a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit" style="float: right" class="btn btn-primary btn-lg ">Login</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <h3 id="Hasil"></h3>
+                </td>
+            </tr>
+        </table>
+    </form>
 </body>
 </html>

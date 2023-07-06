@@ -13,16 +13,20 @@
             <td>ID User</td>
             <td>Username</td>
             <td>Name</td>
+            <td>Pass</td>
+            <td>Role</td>
             <td>Manage</td>
         </tr>
         <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <tr>
-            <td><?php echo e($user->IDUser); ?></td>
+            <td><?php echo e($user->id); ?></td>
             <td><?php echo e($user->Username); ?></td>
-            <td><?php echo e($user->NamaUser); ?></td>
+            <td><?php echo e($user->Nama); ?></td>
+            <td><?php echo e($user->Password); ?></td>
+            <td><?php echo e($user->IDRole); ?></td>
             <td>
-                <a href="<?php echo e(route('users.edit', $user->IDUser)); ?>" type="button" class="btn btn-info" >Edit</a>
-                <form action="<?php echo e(route('users.destroy', $user->IDUser)); ?>" type="button" method="post" onsubmit="return confirm('Yakin?')">
+                <a href="<?php echo e(route('users.edit', $user->id)); ?>" type="button" class="btn btn-info" >Edit</a>
+                <form action="<?php echo e(route('users.destroy', $user->id)); ?>" type="button" method="post" onsubmit="return confirm('Yakin?')">
                     <?php echo csrf_field(); ?>
                     <?php echo method_field('DELETE'); ?>
                     <button class="btn btn-danger">Hapus</button>

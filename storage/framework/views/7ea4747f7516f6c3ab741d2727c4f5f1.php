@@ -13,20 +13,16 @@
                 <td colspan="2"><h3>Tambah User Baru</h3></td>
             </tr>
             <tr>
-                <td>ID User</td>
-                <td><input type="text" name="IDUser" required>
-            </tr>
-            <tr>
                 <td>Username</td>
                 <td><input type="text" name="Username" required>
             </tr>
             <tr>
                 <td>Password</td>
-                <td><input type="text" name="PassUser" required>
+                <td><input type="text" name="Password" required>
             </tr>
             <tr>
                 <td>Nama Lengkap</td>
-                <td><input type="text" name="NamaUser" required>
+                <td><input type="text" name="Nama" required>
             </tr>
             <tr>
                 <td>ID Role</td>

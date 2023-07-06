@@ -9,7 +9,7 @@ class Tagihan extends Model
 {
     protected $table = 'tagihan';
     protected $primaryKey = 'IDTagihan';
-
+    public $timestamps = false;
     protected $fillable = [
         'NoPelanggan',
         'Bulan',

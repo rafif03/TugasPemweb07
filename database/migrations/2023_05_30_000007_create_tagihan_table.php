@@ -12,19 +12,19 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tagihan', function (Blueprint $table) {
-            $table->char('IDTagihan', 10)->primary()->required;
-            $table->date('TglDibuat')->required;
+            $table->id();
+            $table->date('TglDibuat');
             $table->integer('Pengunaan');
             $table->integer('PengunaanLebih');
             $table->integer('Biaya');
-            $table->char('Bulan', 10)->required;
-            $table->boolean('Status')->required;
+            $table->char('Bulan', 10);
+            $table->boolean('Status');
             $table->date('TglBayar');
-            $table->char('NoPelanggan', 10)->required;
-            $table->char('NoKasir', 10);
+            $table->unsignedBigInteger('NoPelanggan');
+            $table->unsignedBigInteger('NoKasir');
 
-            $table->foreign('NoPelanggan')->references('NoPelanggan')->on('pelanggan');
-            $table->foreign('NoKasir')->references('NoKasir')->on('kasir');
+            $table->foreign('NoPelanggan')->references('id')->on('pelanggan');
+            $table->foreign('NoKasir')->references('id')->on('kasir');
         });
     }
 

@@ -12,8 +12,8 @@ class Pelanggan extends Model
 
     public $timestamps = false;
     protected $fillable = [
-        'NoPelanggan',
         'IDUser',
+        'IDJenis',
         'NoTelp',
         'Email',
         'Alamat',

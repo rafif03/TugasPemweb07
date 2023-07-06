@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('jenis_pelanggan', function (Blueprint $table) {
-            $table->char('IDJenis', 10)->primary()->required;
+            $table->id();
             $table->integer('TarifPerKubik');
             $table->integer('TarifLebihBatasan');
             $table->integer('Batasan');

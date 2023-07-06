@@ -12,17 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pelanggan', function (Blueprint $table) {
-            $table->char('NoPelanggan', 10)->primary()->required;
-            $table->char('NoTelp', 20)->required;
-            $table->char('Alamat', 100)->required;
+            $table->id();
+            $table->char('NoTelp', 20);
+            $table->char('Alamat', 100);
             $table->char('Email', 50);
-            $table->char('IDUser', 10)->required;
-            $table->char('IDJenis', 10)->required;
-            $table->char('NoPetugas', 10)->required;
+            $table->unsignedBigInteger('IDUser');
+            $table->unsignedBigInteger('IDJenis');
+            $table->unsignedBigInteger('NoPetugas');
 
-            $table->foreign('IDUser')->references('IDUser')->on('users');
-            $table->foreign('IDJenis')->references('IDJenis')->on('jenis_pelanggan');
-            $table->foreign('NoPetugas')->references('NoPetugas')->on('petugas');
+            $table->foreign('IDUser')->references('id')->on('users');
+            $table->foreign('IDJenis')->references('id')->on('jenis_pelanggan');
+            $table->foreign('NoPetugas')->references('id')->on('petugas');
         });
     }
 
