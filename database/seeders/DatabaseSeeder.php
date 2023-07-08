@@ -18,25 +18,25 @@ class DatabaseSeeder extends Seeder
     {
 
         Roles::Create([
-            'IDRole'        => '1',
+            'id'            => '1',
             'NamaRole'      => 'Admin',
             'Permission'    => 'Mengelola User, Kasir, Petugas, dan Pelanggan'
         ]);
 
         Roles::Create([
-            'IDRole'        => '2',
+            'id'            => '2',
             'NamaRole'      => 'Pelanggan',
             'Permission'    => 'Mengelola tagihan pribadi'
         ]);
 
         Roles::Create([
-            'IDRole'        => '3',
+            'id'            => '3',
             'NamaRole'      => 'Petugas',
             'Permission'    => 'Mengecek penggunaan pelanggan dan membuat Tagihan'
         ]);
 
         Roles::Create([
-            'IDRole'        => '4',
+            'id'            => '4',
             'NamaRole'      => 'Kasir',
             'Permission'    => 'Mengelola Tagihan'
         ]);
@@ -44,52 +44,52 @@ class DatabaseSeeder extends Seeder
 
 
         Users::create([
-            'IDUser'        => '2023001',
+            'id'            => '2023001',
             'IDRole'        => '1',
             'Username'      => 'Ivan123',
-            'PassUser'      => '123',
-            'NamaUser'      => 'Ivander Marvin'
+            'Password'      => '123',
+            'Nama'          => 'Ivander Marvin'
         ]);
 
         Users::create([
-            'IDUser'        => '2023002',
+            'id'            => '2023002',
             'IDRole'        => '2',
             'Username'      => 'Rafif123',
-            'PassUser'      => '123',
-            'NamaUser'      => 'Naufal Rafif'
+            'Password'      => '123',
+            'Nama'          => 'Naufal Rafif'
         ]);
 
         Users::create([
-            'IDUser'        => '2023003',
+            'id'            => '2023003',
             'IDRole'        => '3',
             'Username'      => 'Karin123',
-            'PassUser'      => '123',
-            'NamaUser'      => 'Karin Angela'
+            'Password'      => '123',
+            'Nama'          => 'Karin Angela'
         ]);
 
         Users::create([
-            'IDUser'        => '2023004',
+            'id'            => '2023004',
             'IDRole'        => '4',
             'Username'      => 'John123',
-            'PassUser'      => '123',
-            'NamaUser'      => 'John Doe'
+            'Password'      => '123',
+            'Nama'          => 'John Doe'
         ]);
 
         Jenis_Pelanggan::create([
-            'IDJenis'           => '001',
+            'id'                => '001',
             'TarifPerKubik'     => 10000,
             'TarifLebihBatasan' => 15000,
             'Batasan'           => 100
         ]);
 
         Petugas::create([
-            'NoPetugas'     => '3001',
+            'id'            => '3001',
             'IDUser'        => '2023003',
             'NoTelp'        => '085987654',
             'Area'          => 'Jebres',
         ]);
         Pelanggan::create([
-            'NoPelanggan'   => '2001',
+            'id'            => '2001',
             'IDUser'        => '2023002', 
             'IDJenis'       => '001',  
             'NoTelp'        => '0812345678',
