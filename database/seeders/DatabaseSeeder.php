@@ -41,13 +41,17 @@ class DatabaseSeeder extends Seeder
             'Permission'    => 'Mengelola Tagihan'
         ]);
 
-
+        Roles::Create([
+            'id'            => '5',
+            'NamaRole'      => 'Guest',
+            'Permission'    => 'Tidak Punya Privilege'
+        ]);
 
         Users::create([
             'id'            => '2023001',
             'IDRole'        => '1',
             'Username'      => 'Ivan123',
-            'Password'      => '123',
+            'Password'      => 'pass',
             'Nama'          => 'Ivander Marvin'
         ]);
 
@@ -55,7 +59,7 @@ class DatabaseSeeder extends Seeder
             'id'            => '2023002',
             'IDRole'        => '2',
             'Username'      => 'Rafif123',
-            'Password'      => '123',
+            'Password'      => 'pass',
             'Nama'          => 'Naufal Rafif'
         ]);
 
@@ -63,16 +67,64 @@ class DatabaseSeeder extends Seeder
             'id'            => '2023003',
             'IDRole'        => '3',
             'Username'      => 'Karin123',
-            'Password'      => '123',
+            'Password'      => 'pass',
             'Nama'          => 'Karin Angela'
         ]);
 
         Users::create([
             'id'            => '2023004',
-            'IDRole'        => '4',
+            'IDRole'        => '2',
             'Username'      => 'John123',
-            'Password'      => '123',
+            'Password'      => 'pass',
             'Nama'          => 'John Doe'
+        ]);
+
+        Users::create([
+            'id'            => '2023005',
+            'IDRole'        => '2',
+            'Username'      => 'Rais123',
+            'Password'      => 'pass',
+            'Nama'          => 'Rais Siddiq'
+        ]);
+
+        Users::create([
+            'id'            => '2023006',
+            'IDRole'        => '2',
+            'Username'      => 'Jane123',
+            'Password'      => 'pass',
+            'Nama'          => 'Jane Doe'
+        ]);
+
+        Users::create([
+            'id'            => '2023007',
+            'IDRole'        => '2',
+            'Username'      => 'Jack123',
+            'Password'      => 'pass',
+            'Nama'          => 'Jack Mason'
+        ]);
+
+        Users::create([
+            'id'            => '2023008',
+            'IDRole'        => '5',
+            'Username'      => 'Alex123',
+            'Password'      => 'pass',
+            'Nama'          => 'Alex Mason'
+        ]);
+
+        Users::create([
+            'id'            => '2023009',
+            'IDRole'        => '4',
+            'Username'      => 'Steve123',
+            'Password'      => 'pass',
+            'Nama'          => 'Steve Jobs'
+        ]);
+
+        Users::create([
+            'id'            => '2023010',
+            'IDRole'        => '3',
+            'Username'      => 'Peter123',
+            'Password'      => 'pass',
+            'Nama'          => 'Peter Griffin'
         ]);
 
         Jenis_Pelanggan::create([
@@ -82,12 +134,42 @@ class DatabaseSeeder extends Seeder
             'Batasan'           => 100
         ]);
 
+        Jenis_Pelanggan::create([
+            'id'                => '002',
+            'TarifPerKubik'     => 13000,
+            'TarifLebihBatasan' => 17000,
+            'Batasan'           => 400
+        ]);
+
+        Jenis_Pelanggan::create([
+            'id'                => '003',
+            'TarifPerKubik'     => 16000,
+            'TarifLebihBatasan' => 20000,
+            'Batasan'           => 1000
+        ]);
+
         Petugas::create([
             'id'            => '3001',
             'IDUser'        => '2023003',
-            'NoTelp'        => '085987654',
+            'NoTelp'        => '0859876543',
             'Area'          => 'Jebres',
         ]);
+
+        Petugas::create([
+            'id'            => '3002',
+            'IDUser'        => '2023010',
+            'NoTelp'        => '0859940484',
+            'Area'          => 'Sukoharjo',
+        ]);
+
+        Kasir::create([
+            'id'            => '4001',
+            'IDUser'        => '2023009',
+            'Email'         => 'Steve@uns.ac.id',
+            'NoTelp'        => '0859123551',
+            'NoRekening'    => 'BNI09012',
+        ]);
+
         Pelanggan::create([
             'id'            => '2001',
             'IDUser'        => '2023002', 
@@ -96,6 +178,26 @@ class DatabaseSeeder extends Seeder
             'Email'         => 'Rafif@uns.ac.id',
             'Alamat'        => 'Jebres',
             'NoPetugas'     => '3001',
+        ]);
+
+        Pelanggan::create([
+            'id'            => '2002',
+            'IDUser'        => '2023004', 
+            'IDJenis'       => '002',  
+            'NoTelp'        => '0812309843',
+            'Email'         => 'Rais@uns.ac.id',
+            'Alamat'        => 'Jebres',
+            'NoPetugas'     => '3001',
+        ]);
+
+        Pelanggan::create([
+            'id'            => '2003',
+            'IDUser'        => '2023005', 
+            'IDJenis'       => '003',  
+            'NoTelp'        => '0812331843',
+            'Email'         => 'Jane@uns.ac.id',
+            'Alamat'        => 'Sukoharjo',
+            'NoPetugas'     => '3002',
         ]);
     }
 }
