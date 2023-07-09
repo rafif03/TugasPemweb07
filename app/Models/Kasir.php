@@ -15,5 +15,6 @@ class Kasir extends Model
         'NoTelp',
         'Email',
         'NoRekening',
+        'IDUser'
     ];
 }

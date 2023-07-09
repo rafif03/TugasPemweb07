@@ -19,4 +19,6 @@ class Pelanggan extends Model
         'Alamat',
         'NoPetugas',
     ];
+
+
 }

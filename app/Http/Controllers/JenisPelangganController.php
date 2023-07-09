@@ -9,21 +9,21 @@ class JenisPelangganController extends Controller
 {
     public function index()
     {
-        $jenisPelanggans = Jenis_Pelanggan::all();
+        $jeniss = Jenis_Pelanggan::all();
 
-        return view('jenis_pelanggans.index', compact('jenisPelanggans'));
+        return view('jenis.index', compact('jeniss'));
     }
 
     public function create()
     {
-        return view('jenis_pelanggans.create');
+        return view('jenis.create');
     }
 
     public function store(Request $request)
     {
-        $jenisPelanggan = Jenis_Pelanggan::create($request->all());
+        $jenis = Jenis_Pelanggan::create($request->all());
 
-        return redirect()->route('jenis_pelanggans.index')
+        return redirect()->route('jenis.index')
             ->with('success', 'Jenis Pelanggan created successfully.');
     }
 
@@ -31,14 +31,14 @@ class JenisPelangganController extends Controller
     {
         $jenisPelanggan = Jenis_Pelanggan::findOrFail($id);
 
-        return view('jenis_pelanggans.show', compact('jenisPelanggan'));
+        return view('jenis.show', compact('jenisPelanggan'));
     }
 
     public function edit($id)
     {
-        $jenisPelanggan = Jenis_Pelanggan::findOrFail($id);
+        $jenis = Jenis_Pelanggan::findOrFail($id);
 
-        return view('jenis_pelanggans.edit', compact('jenisPelanggan'));
+        return view('jenis.edit', compact('jenis'));
     }
 
     public function update(Request $request, $id)
@@ -46,7 +46,7 @@ class JenisPelangganController extends Controller
         $jenisPelanggan = Jenis_Pelanggan::findOrFail($id);
         $jenisPelanggan->update($request->all());
 
-        return redirect()->route('jenis_pelanggans.index')
+        return redirect()->route('jenis.index')
             ->with('success', 'Jenis Pelanggan updated successfully.');
     }
 
@@ -54,7 +54,7 @@ class JenisPelangganController extends Controller
     {
         Jenis_Pelanggan::findOrFail($id)->delete();
 
-        return redirect()->route('jenis_pelanggans.index')
+        return redirect()->route('jenis.index')
             ->with('success', 'Jenis Pelanggan deleted successfully.');
     }
 }

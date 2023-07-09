@@ -6,12 +6,20 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-<form action=" {{ route('kasir.update', $kasir->NoKasir) }}" method="post">
-    @csrf
-    @method('PUT')
+<form action=" <?php echo e(route('kasir.store')); ?>" method="post">
+    <?php echo csrf_field(); ?>
         <table class="table table-info table-hover table-striped">
             <tr>
-                <td colspan="2"><h3>Edit Kasir no {{ $kasir->NoKasir }}</h3></td>
+                <td colspan="2"><h3>Buat Kasir</h3></td>
+            </tr>
+            <tr>
+                <td>ID User</td>
+                <td>
+                <select name="IDUser">
+                    <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <option value="<?php echo e($user->id); ?>"><?php echo e($user->id); ?> - <?php echo e($user->Nama); ?></option>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </td>
             </tr>
             <tr>
                 <td>Email</td>
@@ -26,9 +34,9 @@
                 <td><input type="text" name="NoRekening" required>
             </tr>
             <tr>
-                <td colspan="2"><button type="submit" style="float:right">Update</button></td>
+                <td colspan="2"><button type="submit" style="float:right">Create</button></td>
             </tr>
         </table>
 </form>
 </body>
-</html>
+</html><?php /**PATH E:\xampp\htdocs\TugasPemweb07\resources\views/kasir/create.blade.php ENDPATH**/ ?>

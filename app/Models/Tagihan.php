@@ -14,5 +14,11 @@ class Tagihan extends Model
         'NoPelanggan',
         'Bulan',
         'Status',
+        'NoKasir',
+        'TglDibuat',
+        'Pengunaan',
+        'PengunaanLebih',
+        'Biaya',
+        'TglBayar'
     ];
 }

@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pelanggan', function (Blueprint $table) {
-            $table->id();
+            $table->id('NoPelanggan');
             $table->char('NoTelp', 20);
             $table->char('Alamat', 100);
             $table->char('Email', 50);
@@ -20,9 +20,9 @@ return new class extends Migration
             $table->unsignedBigInteger('IDJenis');
             $table->unsignedBigInteger('NoPetugas');
 
-            $table->foreign('IDUser')->references('id')->on('users');
-            $table->foreign('IDJenis')->references('id')->on('jenis_pelanggan');
-            $table->foreign('NoPetugas')->references('id')->on('petugas');
+            $table->foreign('IDUser')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('IDJenis')->references('id')->on('jenis_pelanggan')->onDelete('set null');
+            $table->foreign('NoPetugas')->references('id')->on('petugas')->onDelete('set null');
         });
     }
 

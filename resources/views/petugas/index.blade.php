@@ -6,37 +6,27 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-    <h2>Daftar Tagihan</h2>
-    <a href="{{ route('petugas.create') }}"><button type="button" class="btn btn-primary">Tambah Tagihan</button></a>
+    <h2>Daftar Petugas</h2>
+    <a href="{{ route('petugas.create') }}"><button type="button" class="btn btn-primary">Tambah Petugas</button></a>
     <table class="table table-info table-hover table-striped">
         <tr>
-            <td>No Tagihan</td>
-            <td>No Pelanggan</td>
-            <td>Tanggal</td>
-            <td>Penggunaan</td>
-            <td>Penggunaan Lebih</td>
-            <td>Biaya</td>
-            <td>Bulan</td>
-            <td>Status</td>
-            <td>Tanggal Bayar</td>
-            <td>Kasir</td>
+            <td>ID User</td>
+            <td>No Petugas</td>
+            <td>Nama</td>
+            <td>No Telp</td>
+            <td>Area</td>
             <td>Manage</td>
         </tr>
-        @foreach($tagihan as $tagihan)
+        @foreach($petugass as $petugas)
         <tr>
-            <td>{{ $tagihan->id }}</td>
-            <td>{{ $tagihan->NoPelanggan }}</td>
-            <td>{{ $tagihan->TglDibuat }}</td>
-            <td>{{ $tagihan->Penggunaan }}</td>
-            <td>{{ $tagihan->PenggunaanLebih }}</td>
-            <td>{{ $tagihan->Biaya }}</td>
-            <td>{{ $tagihan->Bulan }}</td>
-            <td>{{ $tagihan->Status }}</td>
-            <td>{{ $tagihan->TglBayar }}</td>
-            <td>{{ $tagihan->NoKasir }}</td>
+            <td>{{ $petugas->IDUser }}</td>
+            <td>{{ $petugas->NoPetugas }}</td>
+            <td>{{ $petugas->Nama }}</td>
+            <td>{{ $petugas->NoTelp }}</td>
+            <td>{{ $petugas->Area }}</td>
             <td>
-                <a href="{{ route('petugas.edit', $tagihan->id) }}" type="button" class="btn btn-info" >Edit</a>
-                <form action="{{ route('petugas.destroy', $tagihan->id) }}" type="button" method="post" onsubmit="return confirm('Yakin?')">
+                <a href="{{ route('petugas.edit', $petugas->NoPetugas) }}" type="button" class="btn btn-info" >Edit</a>
+                <form action="{{ route('petugas.destroy', $petugas->NoPetugas) }}" type="button" method="post" onsubmit="return confirm('Yakin?')">
                     @csrf
                     @method('DELETE')
                     <button class="btn btn-danger">Hapus</button>

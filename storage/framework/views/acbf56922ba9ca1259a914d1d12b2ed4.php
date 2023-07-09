@@ -6,8 +6,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-<form action=" {{ route('petugas.store') }}" method="post">
-    @csrf
+<form action=" <?php echo e(route('petugas.store')); ?>" method="post">
+    <?php echo csrf_field(); ?>
         <table class="table table-info table-hover table-striped">
             <tr>
                 <td colspan="2"><h3>Buat Petugas</h3></td>
@@ -16,9 +16,9 @@
                 <td>ID User</td>
                 <td>
                 <select name="IDUser">
-                    @foreach($users as $user)
-                    <option value="{{ $user->id }}">{{ $user->id }} - {{ $user->Nama }}</option>
-                    @endforeach
+                    <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <option value="<?php echo e($user->id); ?>"><?php echo e($user->id); ?> - <?php echo e($user->Nama); ?></option>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </td>
             </tr>
             <tr>
@@ -35,4 +35,4 @@
         </table>
 </form>
 </body>
-</html>
+</html><?php /**PATH E:\xampp\htdocs\TugasPemweb07\resources\views/petugas/create.blade.php ENDPATH**/ ?>

@@ -11,7 +11,7 @@
     <?php echo method_field('PUT'); ?>
         <table class="table table-info table-hover table-striped">
             <tr>
-                <td colspan="2"><h3>Tambah User Baru</h3></td>
+                <td colspan="2"><h3>Edit User</h3></td>
             </tr>
             <tr>
                 <td>ID User</td>
