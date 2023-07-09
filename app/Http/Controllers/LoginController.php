@@ -18,16 +18,32 @@ class LoginController extends Controller
 
     public function authenticate(Request $request)
     {
-        $user = User::where([
-            'username' => $request->input('Username'), 
-            'password' => $request->input('Password')
-        ])->first();
-        
-        if($user)
+        $credentials = $request->validate([
+            'Username' => ['required'],
+            'password' => ['required']
+        ]);
+ 
+        if(Auth::attempt($credentials))
         {
-            Auth::login($user);
             return redirect('/users');
         }
 
+        return back()->with('loginError', 'Login failed');
+    }
+
+    public function regist()
+    {
+        return view('register');
+    }
+
+    public function register(Request $request){
+        $credentials = $request->validate([
+            'Username' => ['required'],
+            'password' => ['required'],
+            'Nama'     => ['required']
+        ]);
+        $credentials['IDRole'] = 5;
+        User::create($credentials);
+        return redirect('login');
     }
 }

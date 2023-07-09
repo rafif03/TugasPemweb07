@@ -26,7 +26,12 @@
             </tr>
             <tr>
                 <td>ID Role</td>
-                <td><input type="text" name="IDRole" required>
+                <td><select name="IDRole">
+                    <option value="1">Admin</option>
+                    <option value="2">Petugas</option>
+                    <option value="3">Kasir</option>
+                    <option value="4">Pelanggan</option>
+                </td>
             </tr>
             <tr>
                 <td colspan="2"><button type="submit" style="float:right">Tambah</button></td>

@@ -67,4 +67,6 @@ Route::put('/jenis/edit/{id}', [JenisPelangganController::class, 'update'])->nam
 Route::delete('/jenis/{id}', [JenisPelangganController::class, 'destroy'])->name('jenis.destroy');
 
 Route::get('/login', [LoginController::class, 'login'])->name('login');
-Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/login', [LoginController::class, 'authenticate'])->name('ceklogin');
+Route::get('/register', [LoginController::class, 'regist'])->name('register');
+Route::post('/register', [LoginController::class, 'register'])->name('save');

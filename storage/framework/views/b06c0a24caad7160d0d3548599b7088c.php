@@ -22,7 +22,7 @@
             <td><?php echo e($user->id); ?></td>
             <td><?php echo e($user->Username); ?></td>
             <td><?php echo e($user->Nama); ?></td>
-            <td><?php echo e($user->Password); ?></td>
+            <td><?php echo e($user->password); ?></td>
             <td><?php echo e($user->IDRole); ?></td>
             <td>
                 <a href="<?php echo e(route('users.edit', $user->id)); ?>" type="button" class="btn btn-info" >Edit</a>

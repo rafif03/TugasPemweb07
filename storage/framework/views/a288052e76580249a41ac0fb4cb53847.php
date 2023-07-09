@@ -17,7 +17,7 @@
     </style>
 </head>
 <body>
-    <form method="POST" action="<?php echo e(route('ceklogin')); ?>">
+    <form method="POST" action="<?php echo e(route('save')); ?>">
     <?php echo csrf_field(); ?>
         <table class="table table-striped d-flex justify-content-center">
             <tr><td colspan="2"><h4>Login</h4></td></tr>
@@ -30,17 +30,15 @@
                 <td><input type="text" name="password" required></input></td>
             </tr>
             <tr>
-                <td>Don't Have Account?</td>
-                <td>
-                <a href="<?php echo e(route('register')); ?>"><button type="button" style="float: right" class="btn btn-sm btn-outline-primary btn-lg ">Register</button></a>
-                </td>
+                <td>Nama</td>
+                <td><input type="text" name="Nama" required></input></td>
             </tr>
             <tr>
                 <td colspan="2">
-                    <button type="submit" style="float: right" class="btn btn-primary btn-lg ">Login</button>
+                    <button type="submit" style="float: right" class="btn btn-primary btn-lg ">Register</button>
                 </td>
             </tr>
         </table>
     </form>
 </body>
-</html><?php /**PATH E:\xampp\htdocs\TugasPemweb07\resources\views/login.blade.php ENDPATH**/ ?>
+</html><?php /**PATH E:\xampp\htdocs\TugasPemweb07\resources\views/register.blade.php ENDPATH**/ ?>

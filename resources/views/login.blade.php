@@ -17,7 +17,7 @@
     </style>
 </head>
 <body>
-    <form method="POST" action="{{ route('login') }}">
+    <form method="POST" action="{{ route('ceklogin') }}">
     @csrf
         <table class="table table-striped d-flex justify-content-center">
             <tr><td colspan="2"><h4>Login</h4></td></tr>
@@ -27,22 +27,17 @@
             </tr>
             <tr>
                 <td>Pass</td>
-                <td><input type="text" name="Password" required></input></td>
+                <td><input type="text" name="password" required></input></td>
             </tr>
             <tr>
                 <td>Don't Have Account?</td>
                 <td>
-                <a href=""><button type="button" style="float: right" class="btn btn-sm btn-outline-primary btn-lg ">Register</button></a>
+                <a href="{{ route('register') }}"><button type="button" style="float: right" class="btn btn-sm btn-outline-primary btn-lg ">Register</button></a>
                 </td>
             </tr>
             <tr>
                 <td colspan="2">
                     <button type="submit" style="float: right" class="btn btn-primary btn-lg ">Login</button>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <h3 id="Hasil"></h3>
                 </td>
             </tr>
         </table>

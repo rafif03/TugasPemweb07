@@ -22,7 +22,7 @@
             <td>{{ $user->id }}</td>
             <td>{{ $user->Username }}</td>
             <td>{{ $user->Nama }}</td>
-            <td>{{ $user->Password }}</td>
+            <td>{{ $user->password }}</td>
             <td>{{ $user->IDRole }}</td>
             <td>
                 <a href="{{ route('users.edit', $user->id) }}" type="button" class="btn btn-info" >Edit</a>

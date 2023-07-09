@@ -11,7 +11,7 @@
     <?php echo method_field('PUT'); ?>
         <table class="table table-info table-hover table-striped">
             <tr>
-                <td colspan="2"><h3>Edit User</h3></td>
+                <td colspan="2"><h3>Edit User ID <?php echo e($users->id); ?></h3></td>
             </tr>
             <tr>
                 <td>ID User</td>
@@ -23,15 +23,11 @@
             </tr>
             <tr>
                 <td>Password</td>
-                <td><input type="text" name="Password" required>
+                <td><input type="text" name="password" required>
             </tr>
             <tr>
                 <td>Nama Lengkap</td>
                 <td><input type="text" name="Nama" required>
-            </tr>
-            <tr>
-                <td>ID Role</td>
-                <td><input type="text" name="IDRole" required>
             </tr>
             <tr>
                 <td colspan="2"><button type="submit" style="float:right">Update</button></td>

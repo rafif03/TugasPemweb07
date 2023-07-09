@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->char('Username', 50);
             $table->char('Nama', 100);
-            $table->string('Password');
+            $table->string('password');
             $table->rememberToken();
             $table->timestamps();
             $table->unsignedBigInteger('IDRole');
