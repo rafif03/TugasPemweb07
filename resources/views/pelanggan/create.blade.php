@@ -42,7 +42,7 @@
                 <td>
                 <select name="NoPetugas">
                     @foreach($petugass as $petugas)
-                    <option value="{{ $petugas->id }}">{{ $petugas->id }} - {{ $petugas->Nama }}</option>
+                    <option value="{{ $petugas->NoPetugas }}">{{ $petugas->NoPetugas }} - {{ $petugas->Nama }}</option>
                     @endforeach
                 </td>
             </tr>

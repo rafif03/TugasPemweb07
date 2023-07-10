@@ -20,15 +20,17 @@ class PelangganController extends Controller
 
     public function create()
     {
-        $users       = User::where('IDRole','=',4)->get();
+        $users       = User::where('IDRole','=',5)->get();
         $petugass    = DB::table('petugas')->join('Users', 'Users.id','=','petugas.IDUser')->get();
+        
         return view('pelanggan.create', compact('users', 'petugass'));
     }
 
     public function store(Request $request)
     {
         $pelanggan = Pelanggan::create($request->all());
-
+        $user = User::findOrFail($pelanggan->IDUser);
+        $user->update(['IDRole' => 4]);
         return redirect()->route('pelanggan.index')
             ->with('success', 'Pelanggan created successfully.');
     }
@@ -43,10 +45,9 @@ class PelangganController extends Controller
     public function edit($id)
     {
         $pelanggan = Pelanggan::findOrFail($id);
-        $users       = User::where('IDRole','=',4)->get();
-        $petugass    = Petugas::all();
+        $petugass    = DB::table('petugas')->join('Users', 'Users.id','=','petugas.IDUser')->get();
 
-        return view('pelanggan.edit', compact('pelanggan','users','petugass'));
+        return view('pelanggan.edit', compact('pelanggan','petugass'));
     }
 
     public function update(Request $request, $id)

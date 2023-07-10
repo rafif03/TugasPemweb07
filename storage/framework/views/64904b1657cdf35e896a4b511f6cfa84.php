@@ -57,14 +57,9 @@
                 <td>Status</td>
                 <td>
                 <select name="Status">
-                    <option value="Lunas">Lunas</option>
                     <option value="Belum">Belum Lunas</option>
                 </select>
                 </td>       
-            </tr>
-            <tr>
-                <td>Tanggal Bayar</td>
-                <td><input type="date" name="TglBayar">
             </tr>
             <tr>
                 <td>No Kasir</td>

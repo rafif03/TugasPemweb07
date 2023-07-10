@@ -10,7 +10,7 @@
     <?php echo csrf_field(); ?>
         <table class="table table-info table-hover table-striped">
             <tr>
-                <td colspan="2"><h3>Edit Pelanggan</h3></td>
+                <td colspan="2"><h3>Buat Pelanggan</h3></td>
             </tr>
             <tr>
                 <td>ID User</td>
@@ -42,7 +42,7 @@
                 <td>
                 <select name="NoPetugas">
                     <?php $__currentLoopData = $petugass; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $petugas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <option value="<?php echo e($petugas->id); ?>"><?php echo e($petugas->id); ?> - <?php echo e($petugas->Nama); ?></option>
+                    <option value="<?php echo e($petugas->NoPetugas); ?>"><?php echo e($petugas->NoPetugas); ?> - <?php echo e($petugas->Nama); ?></option>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </td>
             </tr>

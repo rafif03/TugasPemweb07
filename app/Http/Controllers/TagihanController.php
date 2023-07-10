@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Kasir;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class TagihanController extends Controller
 {
@@ -21,8 +22,8 @@ class TagihanController extends Controller
 
     public function create()
     {
-        $pelanggans = DB::table('users')->join('pelanggan', 'pelanggan.IDUser','=','Users.ID')->get();
-        $kasirs = DB::table('users')->join('kasir', 'kasir.IDUser','=','Users.ID')->get();
+        $pelanggans = DB::table('users')->join('pelanggan', 'pelanggan.IDUser','=','Users.id')->get();
+        $kasirs = DB::table('users')->join('kasir', 'kasir.IDUser','=','Users.id')->get();
         return view('tagihan.create', compact('pelanggans','kasirs'));
     }
 
@@ -52,7 +53,7 @@ class TagihanController extends Controller
     public function edit($id)
     {
         $tagihan = Tagihan::findOrFail($id);
-        $kasirs = DB::table('users')->join('kasir', 'kasir.IDUser','=','Users.ID')->get();
+        $kasirs = DB::table('users')->join('kasir', 'kasir.IDUser','=','Users.id')->get();
 
         return view('tagihan.edit', compact('tagihan','kasirs'));
     }
@@ -81,4 +82,41 @@ class TagihanController extends Controller
         return redirect()->route('tagihan.index')
             ->with('success', 'Tagihan deleted successfully.');
     }
+
+    public function pelunasanindex()
+    {
+        $userid = Auth::user()->id;
+        $tagihans = DB::table('tagihan')->join('pelanggan', 'tagihan.NoPelanggan','=','Pelanggan.NoPelanggan')->join('users', 'Pelanggan.IDUser','=','Users.id')->join('kasir','tagihan.NoKasir', '=', 'kasir.NoKasir')->where('kasir.IDUser','=',$userid)->get();
+
+
+        return view('pelunasan.index', compact('tagihans'));
+    }   
+
+    public function pelunasanedit($id)
+    {
+        
+        $tagihan = Tagihan::findOrFail($id);
+
+        return view('pelunasan.edit', compact('tagihan'));
+    }
+    
+    public function pelunasanupdate(Request $request, $id)
+    {
+        $tagihan = Tagihan::findOrFail($id);
+        $tagihan->update($request->all());
+
+        return redirect()->route('pelunasan.index')
+            ->with('success', 'Tagihan updated successfully.');
+    }
+
+    public function tagihansayaindex()
+    {
+        $userid = Auth::user()->id;
+        $tagihans = DB::table('tagihan')->join('pelanggan', 'tagihan.NoPelanggan','=','Pelanggan.NoPelanggan')->join('users', 'Pelanggan.IDUser','=','Users.id')->where('pelanggan.IDUser','=',$userid)->get();
+
+
+        return view('tagihansaya.index', compact('tagihans'));
+    }   
+
+
 }

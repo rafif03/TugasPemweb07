@@ -15,52 +15,36 @@
             </tr>
             <tr>
                 <td>Tanggal Dibuat</td>
-                <td><input type="date" name="TglDibuat" required>
+                <td>{{ $tagihan->TglDibuat }}</td>
             </tr>
             <tr>
                 <td>Penggunaan</td>
-                <td><input type="text" name="Pengunaan" required>
+                <td>{{ $tagihan->Pengunaan }}</td>
             </tr>
             <tr>
                 <td>Penggunaan Lebih</td>
-                <td><input type="text" name="PengunaanLebih" required>
+                <td>{{ $tagihan->PengunaanLebih}}</td>
             </tr>
             <tr>
                 <td>Bulan</td>
-                <td>
-                    <select name="Bulan">
-                        <option value="Januari">Januari</option>
-                        <option value="Februari">Februari</option>
-                        <option value="Maret">Maret</option>
-                        <option value="April">April</option>
-                        <option value="Mei">Mei</option>
-                        <option value="Juni">Juni</option>
-                        <option value="Juli">Juli</option>
-                        <option value="Agustus">Agustus</option>
-                        <option value="September">September</option>
-                        <option value="Oktober">Oktober</option>
-                        <option value="November">November</option>
-                        <option value="Desember">Desember</option>
-                    </select>
-                </td>
+                <td>{{ $tagihan->Bulan }}</td>
             </tr>
             <tr>
                 <td>Status</td>
                 <td>
                 <select name="Status">
+                    <option value="Lunas">Lunas</option>
                     <option value="Belum">Belum Lunas</option>
                 </select>
                 </td>       
             </tr>
             <tr>
+                <td>Tanggal Bayar</td>
+                <td><input type="date" name="TglBayar">
+            </tr>
+            <tr>
                 <td>No Kasir</td>
-                <td>
-                    <select name="NoKasir">
-                        @foreach($kasirs as $kasir)
-                        <option value="{{ $kasir->NoKasir }}">{{ $kasir->NoKasir }} - {{ $kasir->Nama }}</option>
-                        @endforeach
-                    </select>
-                </td>
+                <td>{{ $tagihan->NoKasir }}</td>
             </tr>
             <tr>
                 <td colspan="2"><button type="submit" style="float:right">Update</button></td>

@@ -30,6 +30,13 @@
                 <td><input type="text" name="Nama" required>
             </tr>
             <tr>
+                <td>ID Role</td>
+                <td><select name="IDRole">
+                    <option value="1">Admin</option>
+                    <option value="5">Guest</option>
+                </td>
+            </tr>
+            <tr>
                 <td colspan="2"><button type="submit" style="float:right">Update</button></td>
             </tr>
         </table>

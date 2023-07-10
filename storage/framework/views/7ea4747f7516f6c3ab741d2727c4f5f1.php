@@ -18,7 +18,7 @@
             </tr>
             <tr>
                 <td>Password</td>
-                <td><input type="text" name="Password" required>
+                <td><input type="text" name="password" required>
             </tr>
             <tr>
                 <td>Nama Lengkap</td>

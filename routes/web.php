@@ -66,7 +66,29 @@ Route::get('/jenis/edit/{id}', [JenisPelangganController::class, 'edit'])->name(
 Route::put('/jenis/edit/{id}', [JenisPelangganController::class, 'update'])->name('jenis.update');
 Route::delete('/jenis/{id}', [JenisPelangganController::class, 'destroy'])->name('jenis.destroy');
 
+Route::get('/pelunasan', [TagihanController::class, 'pelunasanindex'])->name('pelunasan.index');
+Route::get('/pelunasan/edit/{id}', [TagihanController::class, 'pelunasanedit'])->name('pelunasan.edit');
+Route::put('/pelunasan/edit/{id}', [TagihanController::class, 'pelunasanupdate'])->name('pelunasan.update');
+
+Route::get('/tagihansaya', [TagihanController::class, 'tagihansayaindex'])->name('tagihansaya.index');
+
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('ceklogin');
 Route::get('/register', [LoginController::class, 'regist'])->name('register');
 Route::post('/register', [LoginController::class, 'register'])->name('save');
+
+Route::get('/dasboardadmin', function(){
+    return view('dasboardadmin');
+})->name('dasboardadmin');
+Route::get('/dasboardpetugas', function(){
+    return view('dasboardpetugas');
+})->name('dasboardpetugas');
+Route::get('/dasboardkasir', function(){
+    return view('dasboardkasir');
+})->name('dasboardkasir');
+Route::get('/dasboardpelanggan', function(){
+    return view('dasboardpelanggan');
+})->name('dasboardpelanggan');
+Route::get('/dasboardguest', function(){
+    return view('dasboardguest');
+})->name('dasboardguest');

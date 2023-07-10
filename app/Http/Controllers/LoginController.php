@@ -25,7 +25,25 @@ class LoginController extends Controller
  
         if(Auth::attempt($credentials))
         {
-            return redirect('/users');
+            if (Auth::user()->IDRole == 1) {
+                return redirect('dasboardadmin');
+            }
+
+            if (Auth::user()->IDRole == 2) {
+                return redirect('dasboardpetugas');
+            }
+
+            if (Auth::user()->IDRole == 3) {
+                return redirect('dasboardkasir');
+            }
+
+            if (Auth::user()->IDRole == 4) {
+                return redirect('dasboardpelanggan');
+            }
+            
+            if (Auth::user()->IDRole == 5) {
+                return redirect('dasboardguest');
+            }
         }
 
         return back()->with('loginError', 'Login failed');

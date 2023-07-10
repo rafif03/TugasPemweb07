@@ -11,7 +11,7 @@
     @method('PUT')
         <table class="table table-info table-hover table-striped">
             <tr>
-                <td colspan="2"><h3>Edit Pelanggan no {{ pelanggan->NoPelanggan }}</h3></td>
+                <td colspan="2"><h3>Edit Pelanggan no {{ $pelanggan->NoPelanggan }}</h3></td>
             </tr>
             <tr>
                 <td>No Telp</td>
@@ -34,7 +34,7 @@
                 <td>
                 <select name="NoPetugas">
                     @foreach($petugass as $petugas)
-                    <option value="{{ $petugas->id }}">{{ $petugas->id }}</option>
+                    <option value="{{ $petugas->NoPetugas }}">{{ $petugas->NoPetugas }} - {{ $petugas->Nama }}</option>
                     @endforeach
                 </td>
             </tr>

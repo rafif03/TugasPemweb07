@@ -11,7 +11,7 @@
     <table class="table table-info table-hover table-striped">
         <tr>
             <td>ID User</td>
-            <td>No Petugas</td>
+            <td>No Pelanggan</td>
             <td>Nama</td>
             <td>No Telp</td>
             <td>Alamat</td>

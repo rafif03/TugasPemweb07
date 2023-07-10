@@ -28,9 +28,7 @@
                 <td>ID Role</td>
                 <td><select name="IDRole">
                     <option value="1">Admin</option>
-                    <option value="2">Petugas</option>
-                    <option value="3">Kasir</option>
-                    <option value="4">Pelanggan</option>
+                    <option value="5">Guest</option>
                 </td>
             </tr>
             <tr>

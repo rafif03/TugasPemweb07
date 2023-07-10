@@ -20,14 +20,15 @@ class PetugasController extends Controller
 
     public function create()
     {
-        $users       = User::where('IDRole','=',2)->get();
+        $users       = User::where('IDRole','=',5)->get();
         return view('petugas.create', compact('users'));
     }
 
     public function store(Request $request)
     {
         $petugas = Petugas::create($request->all());
-
+        $user = User::findOrFail($petugas->IDUser);
+        $user->update(['IDRole' => 2]);
         return redirect()->route('petugas.index')
             ->with('success', 'Petugas created successfully.');
     }

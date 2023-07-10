@@ -18,14 +18,15 @@ class KasirController extends Controller
 
     public function create()
     {
-        $users       = User::where('IDRole','=',3)->get();
+        $users       = User::where('IDRole','=',5)->get();
         return view('kasir.create', compact('users'));
     }
 
     public function store(Request $request)
     {
         $kasir = Kasir::create($request->all());
-
+        $user = User::findOrFail($kasir->IDUser);
+        $user->update(['IDRole' => 3]);
         return redirect()->route('kasir.index')
             ->with('success', 'Kasir created successfully.');
     }
