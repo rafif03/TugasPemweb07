@@ -22,7 +22,6 @@
             <td>Tanggal Bayar</td>
             <td>No Petugas</td>
             <td>No Kasir</td>
-            <td>Manage</td>
         </tr>
         <?php $__currentLoopData = $tagihans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tagihan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <tr>

@@ -21,7 +21,7 @@
 <body>
 
     <table class="table table-striped d-flex justify-content-center">
-        <tr><td colspan="2"><h4>Welcome Admin</h4></td></tr>
+        <tr><td colspan="2"><h4>Welcome Admin  <?php echo e(Auth::user()->Nama); ?></h4></td></tr>
         <tr>
             <td colspan="2">
                 <a href="<?php echo e(route('users.index')); ?>"><button class="btn btn-primary btn-lg ">Manage User</button>
