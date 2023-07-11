@@ -17,7 +17,7 @@ class KhususAdmin
     public function handle(Request $request, Closure $next): Response
     {
         if(Auth::user()) {
-            if(Auth::user()->IDRole != 1){
+            if(Auth::user()->IDRole == 1){
                 return $next($request);
             }
             return redirect('login');
