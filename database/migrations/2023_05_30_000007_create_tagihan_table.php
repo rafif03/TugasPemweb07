@@ -23,8 +23,8 @@ return new class extends Migration
             $table->unsignedBigInteger('NoPelanggan');
             $table->unsignedBigInteger('NoKasir');
 
-            $table->foreign('NoPelanggan')->references('id')->on('pelanggan')->onDelete('cascade');
-            $table->foreign('NoKasir')->references('id')->on('kasir')->onDelete('set null');
+            $table->foreign('NoPelanggan')->references('NoPelanggan')->on('pelanggan')->onDelete('cascade');
+            $table->foreign('NoKasir')->references('NoKasir')->on('kasir')->onDelete('cascade');
         });
     }
 

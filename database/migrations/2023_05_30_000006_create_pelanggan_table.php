@@ -21,8 +21,8 @@ return new class extends Migration
             $table->unsignedBigInteger('NoPetugas');
 
             $table->foreign('IDUser')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('IDJenis')->references('id')->on('jenis_pelanggan')->onDelete('set null');
-            $table->foreign('NoPetugas')->references('id')->on('petugas')->onDelete('set null');
+            $table->foreign('IDJenis')->references('IDJenis')->on('jenis_pelanggan')->onDelete('cascade');
+            $table->foreign('NoPetugas')->references('NoPetugas')->on('petugas')->onDelete('cascade');
         });
     }
 
