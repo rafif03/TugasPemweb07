@@ -124,5 +124,21 @@ class TagihanController extends Controller
         return view('tagihansaya.index', compact('tagihans'));
     }   
 
+    public function tagihansayaedit($id)
+    {
+        $tagihan = Tagihan::findOrFail($id);
+
+        return view('tagihansaya.edit', compact('tagihan'));
+    }   
+
+    public function tagihansayaupdate(Request $request, $id)
+    {
+        $tagihan = Tagihan::findOrFail($id);
+        $tagihan->update($request->all());
+
+        return redirect()->route('tagihansaya.index')
+            ->with('success', 'Tagihan updated successfully.');
+    }
+
 
 }

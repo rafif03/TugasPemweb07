@@ -22,6 +22,7 @@
             <td>Tanggal Bayar</td>
             <td>No Petugas</td>
             <td>No Kasir</td>
+            <td>Bayar</td>
         </tr>
         <?php $__currentLoopData = $tagihans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tagihan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <tr>
@@ -37,6 +38,7 @@
             <td><?php echo e($tagihan->TglBayar); ?></td>
             <td><?php echo e($tagihan->NoPetugas); ?></td>
             <td><?php echo e($tagihan->NoKasir); ?></td>
+            <td><a href="<?php echo e(route('tagihansaya.edit', $tagihan->IDTagihan)); ?>" type="button" class="btn btn-info" >Edit</a></td>
         <tr>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </table>

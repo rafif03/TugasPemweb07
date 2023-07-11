@@ -79,6 +79,8 @@ Route::group(['middleware' => ['auth', 'KhususKasir']], function() {
 });
 Route::group(['middleware' => ['auth', 'KhususPelanggan']], function() {
 Route::get('/tagihansaya', [TagihanController::class, 'tagihansayaindex'])->name('tagihansaya.index');
+Route::get('/tagihansaya/edit/{id}', [TagihanController::class, 'tagihansayaedit'])->name('tagihansaya.edit');
+Route::put('/tagihansaya/edit/{id}', [TagihanController::class, 'tagihansayaupdate'])->name('tagihansaya.update');
 });
 
 Route::get('/login', [LoginController::class, 'login'])->name('login');

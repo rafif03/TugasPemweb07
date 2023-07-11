@@ -22,6 +22,7 @@
             <td>Tanggal Bayar</td>
             <td>No Petugas</td>
             <td>No Kasir</td>
+            <td>Bayar</td>
         </tr>
         @foreach($tagihans as $tagihan)
         <tr>
@@ -37,6 +38,7 @@
             <td>{{ $tagihan->TglBayar }}</td>
             <td>{{ $tagihan->NoPetugas}}</td>
             <td>{{ $tagihan->NoKasir }}</td>
+            <td><a href="{{ route('tagihansaya.edit', $tagihan->IDTagihan) }}" type="button" class="btn btn-info" >Edit</a></td>
         <tr>
         @endforeach
     </table>
