@@ -22,7 +22,6 @@ return new class extends Migration
             $table->date('TglBayar')->nullable();
             $table->unsignedBigInteger('NoPelanggan');
             $table->unsignedBigInteger('NoKasir');
-            
             $table->string('BuktiGambar')->nullable();
             
             $table->foreign('NoPelanggan')->references('NoPelanggan')->on('pelanggan')->onDelete('cascade');
