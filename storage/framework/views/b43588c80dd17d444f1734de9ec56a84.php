@@ -20,7 +20,7 @@
     <form method="POST" action="<?php echo e(route('save')); ?>">
     <?php echo csrf_field(); ?>
         <table class="table table-striped d-flex justify-content-center">
-            <tr><td colspan="2"><h4>Login</h4></td></tr>
+            <tr><td colspan="2"><h4>Sign Up</h4></td></tr>
             <tr>
                 <td>Username</td>
                 <td><input type="text" name="Username" required></input></td>

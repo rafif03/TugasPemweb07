@@ -18,7 +18,7 @@
             </tr>
             <tr>
                 <td>Password</td>
-                <td><input type="text" name="Password" required>
+                <td><input type="text" name="password" required>
             </tr>
             <tr>
                 <td>Nama Lengkap</td>
@@ -26,7 +26,10 @@
             </tr>
             <tr>
                 <td>ID Role</td>
-                <td><input type="text" name="IDRole" required>
+                <td><select name="IDRole">
+                    <option value="1">Admin</option>
+                    <option value="5">Guest</option>
+                </td>
             </tr>
             <tr>
                 <td colspan="2"><button type="submit" style="float:right">Tambah</button></td>
