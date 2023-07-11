@@ -37,7 +37,10 @@
     <h>You're logged in as: <strong>{{ Auth::user()->Nama }}</strong></h>
     <div class="navbar" id="navbarText">
         <span class="navbar-text m-1">
-        <p class="btn btn-outline-danger float-start">Log Out</p>
+        <form action="{{ route('logout') }}" method="POST">
+            @csrf
+            <button class="btn btn-danger">Logout</button>
+        </form>
         </span>
     </div>
     </nav>

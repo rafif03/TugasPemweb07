@@ -37,7 +37,10 @@
     <h>You're logged in as: <strong><?php echo e(Auth::user()->Nama); ?></strong></h>
     <div class="navbar" id="navbarText">
         <span class="navbar-text m-1">
-        <p class="btn btn-outline-danger float-start">Log Out</p>
+        <form action="<?php echo e(route('logout')); ?>" method="POST">
+            <?php echo csrf_field(); ?>
+            <button class="btn btn-danger">Logout</button>
+        </form>
         </span>
     </div>
     </nav>

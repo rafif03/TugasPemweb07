@@ -16,8 +16,11 @@ class KhususKasir
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::user()->IDRole ==3 || Auth::user()->IDRole ==1) {
-            return $next($request);
+        if(Auth::user()){
+            if(Auth::user()->IDRole ==3 || Auth::user()->IDRole ==1) {
+                return $next($request);
+            }
+            return redirect('login');
         }
         return redirect('login');
     }
