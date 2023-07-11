@@ -39,6 +39,12 @@ class TagihanController extends Controller
         $biaya = $jenis["Pengunaan"] * $jenis["TarifPerKubik"] + $jenis["PengunaanLebih"] * $jenis["TarifLebihBatasan"];
         $tagihans->update(["Biaya" => $biaya]);
 
+        if($request->file('BuktiGambar')) {
+            $fileName = time().'_'.$request->file('BuktiGambar')->getBuktiTagihan();
+            $request->file('BuktiGambar')->move(public_path('BuktiGambar'), $fileName);
+            $filePath = 'BuktiGambar/'.$fileName;
+        }
+        
         return redirect()->route('tagihan.index')
             ->with('success', 'Tagihan created successfully.');
     }
