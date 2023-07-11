@@ -19,37 +19,27 @@
     </style>
 </head>
 
-<body>
+<body style="background-color:#f0efed;">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand text-primary" href="#">
         <img src="https://cdn.discordapp.com/attachments/1029291906603163751/1128372617083109397/vecteezy_water-drop-icon-png-transparent_9663352_556.png" width="50" height="50" alt="">
         <strong>SIMPAN</strong>
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-        <span class="navbar-text">
+    <div class="navbar" id="navbarText">
+        <span class="navbar-text m-2">
         Sistem Pamsinas Terpadu
         </span>
     </div>
     </nav>
 
     <nav class="navbar navbar-light bg-light">
-        <?php if(Route::has('login')): ?>
-            <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
-                <?php if(auth()->guard()->check()): ?>
-                    <a href="<?php echo e(url('/home')); ?>" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Home</a>
-                <?php else: ?>
-                    <a href="<?php echo e(route('login')); ?>" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
-
-                    <?php if(Route::has('register')): ?>
-                        <a href="<?php echo e(route('register')); ?>" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                    <?php endif; ?>
-                <?php endif; ?>
-            </div>
-        <?php endif; ?>
+    <h>You're logged in as: <strong><?php echo e(Auth::user()->Nama); ?></strong></h>
+    <div class="navbar" id="navbarText">
+        <span class="navbar-text m-1">
+        <p class="btn btn-outline-danger float-start">Log Out</p>
+        </span>
+    </div>
     </nav>
 
 
