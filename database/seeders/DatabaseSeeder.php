@@ -6,7 +6,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\Roles;
 use App\Models\Jenis_Pelanggan;
-use App\Models\Users;
+use App\Models\User;
 use App\Models\Petugas;
 use App\Models\Pelanggan;
 use App\Models\Kasir;
@@ -47,7 +47,7 @@ class DatabaseSeeder extends Seeder
             'Permission'    => 'Tidak Punya Privilege'
         ]);
 
-        Users::create([
+        User::create([
             'id'            => '2023001',
             'IDRole'        => '1',
             'Username'      => 'Ivan123',
@@ -55,7 +55,7 @@ class DatabaseSeeder extends Seeder
             'Nama'          => 'Ivander Marvin'
         ]);
 
-        Users::create([
+        User::create([
             'id'            => '2023002',
             'IDRole'        => '2',
             'Username'      => 'Rafif123',
@@ -63,7 +63,7 @@ class DatabaseSeeder extends Seeder
             'Nama'          => 'Naufal Rafif'
         ]);
 
-        Users::create([
+        User::create([
             'id'            => '2023003',
             'IDRole'        => '3',
             'Username'      => 'Karin123',
@@ -71,7 +71,7 @@ class DatabaseSeeder extends Seeder
             'Nama'          => 'Karin Angela'
         ]);
 
-        Users::create([
+        User::create([
             'id'            => '2023004',
             'IDRole'        => '2',
             'Username'      => 'John123',
@@ -79,7 +79,7 @@ class DatabaseSeeder extends Seeder
             'Nama'          => 'John Doe'
         ]);
 
-        Users::create([
+        User::create([
             'id'            => '2023005',
             'IDRole'        => '2',
             'Username'      => 'Rais123',
@@ -87,7 +87,7 @@ class DatabaseSeeder extends Seeder
             'Nama'          => 'Rais Siddiq'
         ]);
 
-        Users::create([
+        User::create([
             'id'            => '2023006',
             'IDRole'        => '2',
             'Username'      => 'Jane123',
@@ -95,7 +95,7 @@ class DatabaseSeeder extends Seeder
             'Nama'          => 'Jane Doe'
         ]);
 
-        Users::create([
+        User::create([
             'id'            => '2023007',
             'IDRole'        => '2',
             'Username'      => 'Jack123',
@@ -103,7 +103,7 @@ class DatabaseSeeder extends Seeder
             'Nama'          => 'Jack Mason'
         ]);
 
-        Users::create([
+        User::create([
             'id'            => '2023008',
             'IDRole'        => '5',
             'Username'      => 'Alex123',
@@ -111,7 +111,7 @@ class DatabaseSeeder extends Seeder
             'Nama'          => 'Alex Mason'
         ]);
 
-        Users::create([
+        User::create([
             'id'            => '2023009',
             'IDRole'        => '4',
             'Username'      => 'Steve123',
@@ -119,7 +119,7 @@ class DatabaseSeeder extends Seeder
             'Nama'          => 'Steve Jobs'
         ]);
 
-        Users::create([
+        User::create([
             'id'            => '2023010',
             'IDRole'        => '3',
             'Username'      => 'Peter123',
@@ -128,42 +128,42 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Jenis_Pelanggan::create([
-            'id'                => '001',
+            'IDJenis'                => '001',
             'TarifPerKubik'     => 10000,
             'TarifLebihBatasan' => 15000,
             'Batasan'           => 100
         ]);
 
         Jenis_Pelanggan::create([
-            'id'                => '002',
+            'IDJenis'                => '002',
             'TarifPerKubik'     => 13000,
             'TarifLebihBatasan' => 17000,
             'Batasan'           => 400
         ]);
 
         Jenis_Pelanggan::create([
-            'id'                => '003',
+            'IDJenis'                => '003',
             'TarifPerKubik'     => 16000,
             'TarifLebihBatasan' => 20000,
             'Batasan'           => 1000
         ]);
 
         Petugas::create([
-            'id'            => '3001',
+            'NoPetugas'            => '3001',
             'IDUser'        => '2023003',
             'NoTelp'        => '0859876543',
             'Area'          => 'Jebres',
         ]);
 
         Petugas::create([
-            'id'            => '3002',
+            'NoPetugas'            => '3002',
             'IDUser'        => '2023010',
             'NoTelp'        => '0859940484',
             'Area'          => 'Sukoharjo',
         ]);
 
         Kasir::create([
-            'id'            => '4001',
+            'NoKasir'            => '4001',
             'IDUser'        => '2023009',
             'Email'         => 'Steve@uns.ac.id',
             'NoTelp'        => '0859123551',
@@ -171,7 +171,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Pelanggan::create([
-            'id'            => '2001',
+            'NoPelanggan'            => '2001',
             'IDUser'        => '2023002', 
             'IDJenis'       => '001',  
             'NoTelp'        => '0812345678',
@@ -181,7 +181,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Pelanggan::create([
-            'id'            => '2002',
+            'NoPelanggan'            => '2002',
             'IDUser'        => '2023004', 
             'IDJenis'       => '002',  
             'NoTelp'        => '0812309843',
@@ -191,7 +191,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Pelanggan::create([
-            'id'            => '2003',
+            'NoPelanggan'            => '2003',
             'IDUser'        => '2023005', 
             'IDJenis'       => '003',  
             'NoTelp'        => '0812331843',

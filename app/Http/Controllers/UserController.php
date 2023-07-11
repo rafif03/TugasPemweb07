@@ -24,7 +24,7 @@ class UserController extends Controller
         User::create([
             'Nama'      => $request->input('Nama'),
             'Username'  => $request->input('Username'),
-            'Password'  => $request->input('Password'),
+            'password'  => $request->input('password'),
             'IDRole'    => $request->input('IDRole')
         ]);
 
