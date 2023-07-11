@@ -128,42 +128,42 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Jenis_Pelanggan::create([
-            'IDJenis'                => '001',
+            'IDJenis'           => '001',
             'TarifPerKubik'     => 10000,
             'TarifLebihBatasan' => 15000,
             'Batasan'           => 100
         ]);
 
         Jenis_Pelanggan::create([
-            'IDJenis'                => '002',
+            'IDJenis'           => '002',
             'TarifPerKubik'     => 13000,
             'TarifLebihBatasan' => 17000,
             'Batasan'           => 400
         ]);
 
         Jenis_Pelanggan::create([
-            'IDJenis'                => '003',
+            'IDJenis'           => '003',
             'TarifPerKubik'     => 16000,
             'TarifLebihBatasan' => 20000,
             'Batasan'           => 1000
         ]);
 
         Petugas::create([
-            'NoPetugas'            => '3001',
+            'NoPetugas'     => '3001',
             'IDUser'        => '2023003',
             'NoTelp'        => '0859876543',
             'Area'          => 'Jebres',
         ]);
 
         Petugas::create([
-            'NoPetugas'            => '3002',
+            'NoPetugas'     => '3002',
             'IDUser'        => '2023010',
             'NoTelp'        => '0859940484',
             'Area'          => 'Sukoharjo',
         ]);
 
         Kasir::create([
-            'NoKasir'            => '4001',
+            'NoKasir'       => '4001',
             'IDUser'        => '2023009',
             'Email'         => 'Steve@uns.ac.id',
             'NoTelp'        => '0859123551',
@@ -171,7 +171,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Pelanggan::create([
-            'NoPelanggan'            => '2001',
+            'NoPelanggan'   => '2001',
             'IDUser'        => '2023002', 
             'IDJenis'       => '001',  
             'NoTelp'        => '0812345678',
@@ -181,7 +181,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Pelanggan::create([
-            'NoPelanggan'            => '2002',
+            'NoPelanggan'   => '2002',
             'IDUser'        => '2023004', 
             'IDJenis'       => '002',  
             'NoTelp'        => '0812309843',
@@ -191,7 +191,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Pelanggan::create([
-            'NoPelanggan'            => '2003',
+            'NoPelanggan'   => '2003',
             'IDUser'        => '2023005', 
             'IDJenis'       => '003',  
             'NoTelp'        => '0812331843',
