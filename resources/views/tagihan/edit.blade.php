@@ -18,10 +18,6 @@
                 <td><input type="text" name="Pengunaan" required>
             </tr>
             <tr>
-                <td>Penggunaan Lebih</td>
-                <td><input type="text" name="PengunaanLebih" required>
-            </tr>
-            <tr>
                 <td>Bulan</td>
                 <td>
                     <select name="Bulan">

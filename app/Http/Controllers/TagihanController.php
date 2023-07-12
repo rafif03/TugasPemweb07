@@ -36,7 +36,10 @@ class TagihanController extends Controller
                 ->where('tagihan.IDTagihan',$tagihan->IDTagihan)->first();
         $jenis = (array) $arr;
         $tagihans = Tagihan::findOrFail($jenis["IDTagihan"]);
-        $biaya = $jenis["Pengunaan"] * $jenis["TarifPerKubik"] + $jenis["PengunaanLebih"] * $jenis["TarifLebihBatasan"];
+        if((int)$request->Input("Pengunaan") > (int)$jenis['Batasan']){
+            $tagihans->update([ "PengunaanLebih" => (int)$request->Input("Pengunaan") - (int)$jenis["Batasan"], "Pengunaan" => (int)$jenis["Batasan"]]);
+        }
+        $biaya = $tagihans->Pengunaan * $jenis["TarifPerKubik"] + $tagihans->PengunaanLebih * $jenis["TarifLebihBatasan"];
         $tagihans->update(["Biaya" => $biaya]);
 
         if($request->file('BuktiGambar')) {
@@ -73,9 +76,13 @@ class TagihanController extends Controller
         ->join("jenis_pelanggan","jenis_pelanggan.IDJenis",'=','pelanggan.IDJenis')
         ->where('tagihan.IDTagihan',$tagihan->IDTagihan)->first();
         $jenis = (array) $arr;
-        $tagihans = Tagihan::findOrFail($jenis["IDTagihan"]);
-        $biaya = $jenis["Pengunaan"] * $jenis["TarifPerKubik"] + $jenis["PengunaanLebih"] * $jenis["TarifLebihBatasan"];
+        $tagihans = Tagihan::findOrFail($jenis["IDTagihan"]); 
+        if((int)$request->Input("Pengunaan") > (int)$jenis['Batasan']){
+            $tagihans->update(["PengunaanLebih" => (int)$request->Input("Pengunaan") - (int)$jenis["Batasan"], "Pengunaan" => (int)$jenis["Batasan"]]);
+        }
+        $biaya = $tagihans->Pengunaan * $jenis["TarifPerKubik"] + $tagihans->PengunaanLebih * $jenis["TarifLebihBatasan"];
         $tagihans->update(["Biaya" => $biaya]);
+      
 
         return redirect()->route('tagihan.index')
             ->with('success', 'Tagihan updated successfully.');

@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid">
     <h2>Daftar Tagihan</h2>
-    <a href="{{ route('tagihan.create') }}"><button style="width: 150px;" type="button" class="btn btn-primary">Tambah Tagihan</button></a>
+    <!-- <a href="{{ route('tagihan.create') }}"><button style="width: 150px;" type="button" class="btn btn-primary">Tambah Tagihan</button></a> -->
     <table class="table table-info table-hover table-striped">
         <thead style="position: sticky;top: 0">
             <tr>
