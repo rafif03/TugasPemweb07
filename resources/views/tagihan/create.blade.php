@@ -1,11 +1,7 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-</head>
-<body>
+@extends('layouts.main')
+
+@section('content')
+<div class="container-fluid">
 <form action=" {{ route('tagihan.store') }}" method="post">
     @csrf
         <table class="table table-info table-hover table-striped">
@@ -76,5 +72,5 @@
             </tr>
         </table>
 </form>
-</body>
-</html>
+</div>
+@endsection

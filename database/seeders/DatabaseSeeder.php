@@ -177,7 +177,7 @@ class DatabaseSeeder extends Seeder
             'NoTelp'        => '0812345678',
             'Email'         => 'Rafif@uns.ac.id',
             'Alamat'        => 'Jebres',
-            'NoPetugas'     => '3001',
+            'NoPetugas'     => '1',
         ]);
 
         Pelanggan::create([
@@ -187,7 +187,7 @@ class DatabaseSeeder extends Seeder
             'NoTelp'        => '0812309843',
             'Email'         => 'Rais@uns.ac.id',
             'Alamat'        => 'Jebres',
-            'NoPetugas'     => '3001',
+            'NoPetugas'     => '1',
         ]);
 
         Pelanggan::create([
@@ -197,7 +197,7 @@ class DatabaseSeeder extends Seeder
             'NoTelp'        => '0812331843',
             'Email'         => 'Jane@uns.ac.id',
             'Alamat'        => 'Sukoharjo',
-            'NoPetugas'     => '3002',
+            'NoPetugas'     => '2',
         ]);
     }
 }
