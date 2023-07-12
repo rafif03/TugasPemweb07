@@ -17,12 +17,20 @@
         button{
             width: 100%;
         }
+        body{
+            background-attachment: fixed;
+            background-image: url(https://img.freepik.com/premium-photo/watercolor-light-gray-gradient-background-texture_145343-639.jpg?w=2000);
+        }
+        nav{
+            ;
+        }
     </style>
 </head>
 
 <body style="background-color:#f0efed;">
     @include('partials.header')
     @yield('content')
+    @include('partials.footer')
 </body>
 
 </html>

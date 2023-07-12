@@ -17,12 +17,20 @@
         button{
             width: 100%;
         }
+        body{
+            background-attachment: fixed;
+            background-image: url(https://img.freepik.com/premium-photo/watercolor-light-gray-gradient-background-texture_145343-639.jpg?w=2000);
+        }
+        nav{
+            ;
+        }
     </style>
 </head>
 
 <body style="background-color:#f0efed;">
     <?php echo $__env->make('partials.header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <?php echo $__env->yieldContent('content'); ?>
+    <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </body>
 
 </html><?php /**PATH C:\TugasPemweb07-copy\resources\views/layouts/main.blade.php ENDPATH**/ ?>
