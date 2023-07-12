@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-fluid">
-    <form action=" {{ route('tagihansaya.update', $tagihan->IDTagihan) }}" method="post">
+    <form action=" {{ route('tagihansaya.update', $tagihan->IDTagihan) }}" method="post" enctype="multipart/form-data">
     @csrf
     @method('PUT')
         <table class="table table-info table-hover table-striped">
@@ -31,7 +31,7 @@
             </tr>
             <tr>
                 <td>Bukti Bayar</td>
-                <td><input type="file" id=""></td>
+                <td><input type="file" name="BuktiBayar"></td>
             </tr>
             <tr>
                 <td>Tanggal Bayar</td>

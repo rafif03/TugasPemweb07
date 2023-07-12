@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-fluid">
-    <form action=" {{ route('tagihan.update', $tagihan->IDTagihan) }}" method="post">
+    <form action=" {{ route('pelunasan.update', $tagihan->IDTagihan) }}" method="post">
     @csrf
     @method('PUT')
         <table class="table table-info table-hover table-striped">
@@ -35,8 +35,12 @@
                 </td>       
             </tr>
             <tr>
+                <td>Bukti Bayar</td>
+                <td><img src="{{ asset('storage/'.$tagihan->BuktiBayar) }}" height="100px" width="100px"></td>
+            </tr>
+            <tr>
                 <td>Tanggal Bayar</td>
-                <td><input type="date" name="TglBayar">
+                <td>{{ $tagihan->TglBayar }}</td>
             </tr>
             <tr>
                 <td>No Kasir</td>

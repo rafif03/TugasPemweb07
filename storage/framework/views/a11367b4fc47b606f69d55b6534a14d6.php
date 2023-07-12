@@ -1,12 +1,6 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-</head>
-<body>
-    <form action=" <?php echo e(route('tagihan.update', $tagihan->IDTagihan)); ?>" method="post">
+<?php $__env->startSection('content'); ?>
+<div class="container-fluid">
+    <form action=" <?php echo e(route('pelunasan.update', $tagihan->IDTagihan)); ?>" method="post">
     <?php echo csrf_field(); ?>
     <?php echo method_field('PUT'); ?>
         <table class="table table-info table-hover table-striped">
@@ -39,8 +33,12 @@
                 </td>       
             </tr>
             <tr>
+                <td>Bukti Bayar</td>
+                <td><img src="<?php echo e(asset('storage/'.$tagihan->BuktiBayar)); ?>" height="100px" width="100px"></td>
+            </tr>
+            <tr>
                 <td>Tanggal Bayar</td>
-                <td><input type="date" name="TglBayar">
+                <td><?php echo e($tagihan->TglBayar); ?></td>
             </tr>
             <tr>
                 <td>No Kasir</td>
@@ -51,5 +49,6 @@
             </tr>
         </table>
 </form>
-</body>
-</html><?php /**PATH E:\xampp\htdocs\TugasPemweb07\resources\views/pelunasan/edit.blade.php ENDPATH**/ ?>
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\xampp\htdocs\TugasPemweb07\resources\views/pelunasan/edit.blade.php ENDPATH**/ ?>

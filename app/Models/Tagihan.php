@@ -19,6 +19,7 @@ class Tagihan extends Model
         'Pengunaan',
         'PengunaanLebih',
         'Biaya',
-        'TglBayar'
+        'TglBayar',
+        'BuktiBayar'
     ];
 }

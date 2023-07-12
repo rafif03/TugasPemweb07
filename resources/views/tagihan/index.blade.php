@@ -15,6 +15,7 @@
             <td>Biaya</td>
             <td>Bulan</td>
             <td>Status</td>
+            <td>Bukti Bayar</td>
             <td>Tanggal Bayar</td>
             <td>No Petugas</td>
             <td>No Kasir</td>
@@ -31,6 +32,7 @@
             <td>{{ $tagihan->Biaya }}</td>
             <td>{{ $tagihan->Bulan }}</td>
             <td>{{ $tagihan->Status }}</td>
+            <td><img src="{{ asset('storage/'.$tagihan->BuktiBayar) }}" height="100px" width="100px"></td>
             <td>{{ $tagihan->TglBayar }}</td>
             <td>{{ $tagihan->NoPetugas}}</td>
             <td>{{ $tagihan->NoKasir }}</td>

@@ -9,7 +9,7 @@ use App\Models\Kasir;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Storage;
 class TagihanController extends Controller
 {
     public function index()
@@ -40,7 +40,7 @@ class TagihanController extends Controller
         $tagihans->update(["Biaya" => $biaya]);
 
         if($request->file('BuktiGambar')) {
-            $fileName = time().'_'.$request->file('BuktiGambar')->getBuktiTagihan();
+            $fileName = time().'_'.$request->file('BuktiGambar')->getClientOriginalExtension();
             $request->file('BuktiGambar')->move(public_path('BuktiGambar'), $fileName);
             $filePath = 'BuktiGambar/'.$fileName;
         }
@@ -110,6 +110,12 @@ class TagihanController extends Controller
     {
         $tagihan = Tagihan::findOrFail($id);
         $tagihan->update($request->all());
+        if($request->Input('Status')=="Belum"){
+            $tagihan->update([
+                "TglBayar" => NULL,
+                "BuktiBayar" => NULL
+            ]);
+        }
 
         return redirect()->route('pelunasan.index')
             ->with('success', 'Tagihan updated successfully.');
@@ -135,6 +141,12 @@ class TagihanController extends Controller
     {
         $tagihan = Tagihan::findOrFail($id);
         $tagihan->update($request->all());
+        $file = $request->file('BuktiBayar');
+        $extension = $request->file('BuktiBayar')->getClientOriginalExtension();
+        $fileName = time().'.'.$extension;
+        $file->storeAs('public', $fileName);
+        $tagihan->update(['BuktiBayar' => $fileName]);
+
 
         return redirect()->route('tagihansaya.index')
             ->with('success', 'Tagihan updated successfully.');

@@ -1,12 +1,6 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-</head>
-<body>
-    <form action=" <?php echo e(route('tagihansaya.update', $tagihan->IDTagihan)); ?>" method="post">
+<?php $__env->startSection('content'); ?>
+<div class="container-fluid">
+    <form action=" <?php echo e(route('tagihansaya.update', $tagihan->IDTagihan)); ?>" method="post" enctype="multipart/form-data">
     <?php echo csrf_field(); ?>
     <?php echo method_field('PUT'); ?>
         <table class="table table-info table-hover table-striped">
@@ -35,7 +29,7 @@
             </tr>
             <tr>
                 <td>Bukti Bayar</td>
-                <td><input type="file" id=""></td>
+                <td><input type="file" name="BuktiBayar"></td>
             </tr>
             <tr>
                 <td>Tanggal Bayar</td>
@@ -49,6 +43,7 @@
                 <td colspan="2"><button type="submit" style="float:right">Update</button></td>
             </tr>
         </table>
-</form>
-</body>
-</html><?php /**PATH E:\xampp\htdocs\TugasPemweb07\resources\views/tagihansaya/edit.blade.php ENDPATH**/ ?>
+    </form>
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\xampp\htdocs\TugasPemweb07\resources\views/tagihansaya/edit.blade.php ENDPATH**/ ?>
