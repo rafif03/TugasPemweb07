@@ -3,14 +3,16 @@
     <h2>Daftar User</h2>
     <a href="<?php echo e(route('users.create')); ?>" style><button style="width: 150px;" type="button" class="btn btn-primary">Tambah User</button></a>
     <table class="table table-info table-hover table-striped">
-        <tr>
-            <td>ID User</td>
-            <td>Username</td>
-            <td>Name</td>
-            <td>Pass</td>
-            <td>Role</td>
-            <td>Manage</td>
-        </tr>
+        <thead style="position: sticky;top: 0">
+            <tr>
+                <td>ID User</td>
+                <td>Username</td>
+                <td>Name</td>
+                <td>Pass</td>
+                <td>Role</td>
+                <td>Manage</td>
+            </tr>
+        </thead>
         <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <tr>
             <td><?php echo e($user->id); ?></td>

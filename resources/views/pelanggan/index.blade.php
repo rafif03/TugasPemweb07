@@ -5,17 +5,19 @@
     <h2>Daftar Pelanggan</h2>
     <a href="{{ route('pelanggan.create') }}"><button style="width: 150px;" type="button" class="btn btn-primary">Tambah Pelanggan</button></a>
     <table class="table table-info table-hover table-striped">
-        <tr>
-            <td>ID User</td>
-            <td>No Pelanggan</td>
-            <td>Nama</td>
-            <td>No Telp</td>
-            <td>Alamat</td>
-            <td>Email</td>
-            <td>Jenis</td>
-            <td>No Petugas</td>
-            <td>Manage</td>
-        </tr>
+        <thead style="position: sticky;top: 0">
+            <tr>
+                <td>ID User</td>
+                <td>No Pelanggan</td>
+                <td>Nama</td>
+                <td>No Telp</td>
+                <td>Alamat</td>
+                <td>Email</td>
+                <td>Jenis</td>
+                <td>No Petugas</td>
+                <td>Manage</td>
+            </tr>
+        </thead>
         @foreach($pelanggans as $pelanggan)
         <tr>
             <td>{{ $pelanggan->IDUser }}</td>

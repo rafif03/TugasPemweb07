@@ -5,14 +5,16 @@
     <h2>Daftar User</h2>
     <a href="{{ route('users.create') }}" style><button style="width: 150px;" type="button" class="btn btn-primary">Tambah User</button></a>
     <table class="table table-info table-hover table-striped">
-        <tr>
-            <td>ID User</td>
-            <td>Username</td>
-            <td>Name</td>
-            <td>Pass</td>
-            <td>Role</td>
-            <td>Manage</td>
-        </tr>
+        <thead style="position: sticky;top: 0">
+            <tr>
+                <td>ID User</td>
+                <td>Username</td>
+                <td>Name</td>
+                <td>Pass</td>
+                <td>Role</td>
+                <td>Manage</td>
+            </tr>
+        </thead>
         @foreach($users as $user)
         <tr>
             <td>{{ $user->id }}</td>

@@ -5,13 +5,15 @@
     <h2>Daftar Jenis Pelanggan</h2>
     <a href="{{ route('jenis.create') }}"><button style="width: 150px;" type="button" class="btn btn-primary">Tambah Jenis Pelanggan</button></a>
     <table class="table table-info table-hover table-striped">
-        <tr>
-            <td>ID Jenis Pelanggan</td>
-            <td>Tarif per Meter Kubik (Rp)</td>
-            <td>Tarif Melebihi Batasan (Rp)</td>
-            <td>Batasan (Meter Kubik)</td>
-            <td>Manage</td>
-        </tr>
+        <thead style="position: sticky;top: 0">
+            <tr>
+                <td>ID Jenis Pelanggan</td>
+                <td>Tarif per Meter Kubik (Rp)</td>
+                <td>Tarif Melebihi Batasan (Rp)</td>
+                <td>Batasan (Meter Kubik)</td>
+                <td>Manage</td>
+            </tr>
+        </thead>
         @foreach($jeniss as $jenis)
         <tr>
             <td>{{ $jenis->IDJenis }}</td>

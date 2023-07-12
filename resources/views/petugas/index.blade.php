@@ -5,14 +5,16 @@
     <h2>Daftar Petugas</h2>
     <a href="{{ route('petugas.create') }}"><button style="width: 150px;" type="button" class="btn btn-primary">Tambah Petugas</button></a>
     <table class="table table-info table-hover table-striped">
-        <tr>
-            <td>ID User</td>
-            <td>No Petugas</td>
-            <td>Nama</td>
-            <td>No Telp</td>
-            <td>Area</td>
-            <td>Manage</td>
-        </tr>
+        <thead style="position: sticky;top: 0">
+            <tr>
+                <td>ID User</td>
+                <td>No Petugas</td>
+                <td>Nama</td>
+                <td>No Telp</td>
+                <td>Area</td>
+                <td>Manage</td>
+            </tr>
+        </thead>
         @foreach($petugass as $petugas)
         <tr>
             <td>{{ $petugas->IDUser }}</td>

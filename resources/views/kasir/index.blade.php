@@ -5,15 +5,17 @@
     <h2>Daftar Kasir</h2>
     <a href="{{ route('kasir.create') }}"><button style="width: 150px;" type="button" class="btn btn-primary">Tambah Kasir</button></a>
     <table class="table table-info table-hover table-striped">
-        <tr>
-            <td>ID User</td>
-            <td>No Kasir</td>
-            <td>Nama</td>
-            <td>Email</td>
-            <td>No Telp</td>
-            <td>No Rek</td>
-            <td>Manage</td>
-        </tr>
+        <thead style="position: sticky;top: 0">
+            <tr>
+                <td>ID User</td>
+                <td>No Kasir</td>
+                <td>Nama</td>
+                <td>Email</td>
+                <td>No Telp</td>
+                <td>No Rek</td>
+                <td>Manage</td>
+            </tr>
+        </thead>
         @foreach($kasirs as $kasir)
         <tr>
             <td>{{ $kasir->IDUser }}</td>

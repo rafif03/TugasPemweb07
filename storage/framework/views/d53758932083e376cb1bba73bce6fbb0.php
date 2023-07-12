@@ -1,5 +1,4 @@
 <?php $__env->startSection('content'); ?>
-<body>
 <div class="container-fluid">
     <form action=" <?php echo e(route('users.store')); ?>" method="post">
     <?php echo csrf_field(); ?>
@@ -32,6 +31,5 @@
         </table>
     </form>
 </div>
-</body>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\TugasPemweb07-copy\resources\views/users/create.blade.php ENDPATH**/ ?>
