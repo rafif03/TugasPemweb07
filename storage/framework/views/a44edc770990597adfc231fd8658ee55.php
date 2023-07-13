@@ -20,10 +20,10 @@
     </style>
 </head>
 <body>
-    <form method="POST" action="<?php echo e(route('ceklogin')); ?>">
+    <form method="POST" action="<?php echo e(route('save')); ?>">
     <?php echo csrf_field(); ?>
         <table class="table table-striped d-flex justify-content-center">
-            <tr><td colspan="2"><h4>Login</h4></td></tr>
+            <tr><td colspan="2"><h4>Sign Up</h4></td></tr>
             <tr>
                 <td>Username</td>
                 <td><input type="text" name="Username" required></input></td>
@@ -33,9 +33,13 @@
                 <td><input type="text" name="password" required></input></td>
             </tr>
             <tr>
-                <td>Don't Have Account?</td>
+                <td>Nama</td>
+                <td><input type="text" name="Nama" required></input></td>
+            </tr>
+            <tr>
+                <td>Have An Account?</td>
                 <td>
-                <a href="<?php echo e(route('register')); ?>"><button type="button" style="float: right" class="btn btn-sm btn-outline-primary btn-lg ">Register</button></a>
+                <a href="<?php echo e(route('login')); ?>"><button type="button" style="float: right" class="btn btn-sm btn-outline-primary btn-lg ">Register</button></a>
                 </td>
             </tr>
             <tr>
@@ -46,4 +50,4 @@
         </table>
     </form>
 </body>
-</html><?php /**PATH C:\TugasPemweb07-copy\resources\views/login.blade.php ENDPATH**/ ?>
+</html><?php /**PATH C:\TugasPemweb07-copy\resources\views/register.blade.php ENDPATH**/ ?>

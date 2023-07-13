@@ -13,7 +13,10 @@
             margin-top: 10%;
             width:50%;
         }
-
+        body{
+            background-attachment: fixed;
+            background-image: url(https://img.freepik.com/premium-photo/watercolor-light-gray-gradient-background-texture_145343-639.jpg?w=2000);
+        }
     </style>
 </head>
 <body>
@@ -34,8 +37,14 @@
                 <td><input type="text" name="Nama" required></input></td>
             </tr>
             <tr>
+                <td>Have An Account?</td>
+                <td>
+                <a href="{{ route('login') }}"><button type="button" style="float: right" class="btn btn-sm btn-outline-primary btn-lg ">Register</button></a>
+                </td>
+            </tr>
+            <tr>
                 <td colspan="2">
-                    <button type="submit" style="float: right" class="btn btn-primary btn-lg ">Register</button>
+                    <button type="submit" style="float: right" class="btn btn-primary btn-lg ">Login</button>
                 </td>
             </tr>
         </table>

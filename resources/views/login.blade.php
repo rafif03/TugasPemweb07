@@ -13,7 +13,10 @@
             margin-top: 10%;
             width:50%;
         }
-
+        body{
+            background-attachment: fixed;
+            background-image: url(https://img.freepik.com/premium-photo/watercolor-light-gray-gradient-background-texture_145343-639.jpg?w=2000);
+        }
     </style>
 </head>
 <body>

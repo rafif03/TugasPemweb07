@@ -25,20 +25,20 @@ class DatabaseSeeder extends Seeder
 
         Roles::Create([
             'id'            => '2',
-            'NamaRole'      => 'Pelanggan',
-            'Permission'    => 'Mengelola tagihan pribadi'
-        ]);
-
-        Roles::Create([
-            'id'            => '3',
             'NamaRole'      => 'Petugas',
             'Permission'    => 'Mengecek penggunaan pelanggan dan membuat Tagihan'
         ]);
 
         Roles::Create([
-            'id'            => '4',
+            'id'            => '3',
             'NamaRole'      => 'Kasir',
-            'Permission'    => 'Mengelola Tagihan'
+            'Permission'    => 'Mengelola tagihan'
+        ]);
+
+        Roles::Create([
+            'id'            => '4',
+            'NamaRole'      => 'Pelanggan',
+            'Permission'    => 'Mengelola tagihan pelanggan'
         ]);
 
         Roles::Create([
@@ -57,7 +57,7 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'id'            => '2',
-            'IDRole'        => '2',
+            'IDRole'        => '4',
             'Username'      => 'Rafif123',
             'Password'      => 'pass',
             'Nama'          => 'Naufal Rafif'
@@ -65,7 +65,7 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'id'            => '3',
-            'IDRole'        => '3',
+            'IDRole'        => '2',
             'Username'      => 'Karin123',
             'Password'      => 'pass',
             'Nama'          => 'Karin Angela'
@@ -73,7 +73,7 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'id'            => '4',
-            'IDRole'        => '2',
+            'IDRole'        => '4',
             'Username'      => 'John123',
             'Password'      => 'pass',
             'Nama'          => 'John Doe'
@@ -81,7 +81,7 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'id'            => '5',
-            'IDRole'        => '2',
+            'IDRole'        => '4',
             'Username'      => 'Rais123',
             'Password'      => 'pass',
             'Nama'          => 'Rais Siddiq'
@@ -89,7 +89,7 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'id'            => '6',
-            'IDRole'        => '2',
+            'IDRole'        => '4',
             'Username'      => 'Jane123',
             'Password'      => 'pass',
             'Nama'          => 'Jane Doe'
@@ -97,7 +97,7 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'id'            => '7',
-            'IDRole'        => '2',
+            'IDRole'        => '4',
             'Username'      => 'Jack123',
             'Password'      => 'pass',
             'Nama'          => 'Jack Mason'
@@ -113,7 +113,7 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'id'            => '9',
-            'IDRole'        => '4',
+            'IDRole'        => '3',
             'Username'      => 'Steve123',
             'Password'      => 'pass',
             'Nama'          => 'Steve Jobs'
@@ -121,7 +121,7 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'id'            => '10',
-            'IDRole'        => '3',
+            'IDRole'        => '2',
             'Username'      => 'Peter123',
             'Password'      => 'pass',
             'Nama'          => 'Peter Griffin'

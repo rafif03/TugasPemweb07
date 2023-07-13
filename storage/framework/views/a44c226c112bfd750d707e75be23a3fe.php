@@ -3,22 +3,24 @@
     <h2>Daftar Tagihan</h2>
     <a href="<?php echo e(route('tagihan.create')); ?>"><button type="button" style="width: 150px;" class="btn btn-primary">Tambah Tagihan</button></a>
     <table class="table table-info table-hover table-striped">
-        <tr>
-            <td>ID Tagihan</td>
-            <td>No Pelanggan</td>
-            <td>Nama</td>
-            <td>Tanggal</td>/
-            <td>Penggunaan</td>
-            <td>Penggunaan Lebih</td>
-            <td>Biaya</td>
-            <td>Bulan</td>
-            <td>Status</td>
-            <td>Bukti Bayar</td>
-            <td>Tanggal Bayar</td>
-            <td>No Petugas</td>
-            <td>No Kasir</td>
-            <td>Manage</td>
-        </tr>
+        <thead style="position: sticky;top: 0">
+            <tr>
+                <td>ID Tagihan</td>
+                <td>No Pelanggan</td>
+                <td>Nama</td>
+                <td>Tanggal</td>/
+                <td>Penggunaan</td>
+                <td>Penggunaan Lebih</td>
+                <td>Biaya</td>
+                <td>Bulan</td>
+                <td>Status</td>
+                <td>Bukti Bayar</td>
+                <td>Tanggal Bayar</td>
+                <td>No Petugas</td>
+                <td>No Kasir</td>
+                <td>Manage</td>
+            </tr>
+        </thead>
         <?php $__currentLoopData = $tagihans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tagihan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <tr>
             <td><?php echo e($tagihan->IDTagihan); ?></td>
