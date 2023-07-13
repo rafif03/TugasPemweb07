@@ -127,6 +127,46 @@ class DatabaseSeeder extends Seeder
             'Nama'          => 'Peter Griffin'
         ]);
 
+        User::create([
+            'id'            => '11',
+            'IDRole'        => '5',
+            'Username'      => 'Naufal123',
+            'Password'      => 'pass',
+            'Nama'          => 'Naufal Nugroho'
+        ]);
+
+        User::create([
+            'id'            => '12',
+            'IDRole'        => '5',
+            'Username'      => 'Arya123',
+            'Password'      => 'pass',
+            'Nama'          => 'Arya Veda'
+        ]);
+
+        User::create([
+            'id'            => '13',
+            'IDRole'        => '5',
+            'Username'      => 'Mahen123',
+            'Password'      => 'pass',
+            'Nama'          => 'Mahendra'
+        ]);
+
+        User::create([
+            'id'            => '14',
+            'IDRole'        => '5',
+            'Username'      => 'Bima123',
+            'Password'      => 'pass',
+            'Nama'          => 'Bima Sakti'
+        ]);
+
+        User::create([
+            'id'            => '15',
+            'IDRole'        => '5',
+            'Username'      => 'Jaka123',
+            'Password'      => 'pass',
+            'Nama'          => 'Jaka Tingkir'
+        ]);
+
         Jenis_Pelanggan::create([
             'IDJenis'           => '1',
             'TarifPerKubik'     => 10000,
