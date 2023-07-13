@@ -20,6 +20,16 @@
     </style>
 </head>
 <body>
+    <nav class="navbar navbar-light">
+    <a class="navbar-brand text-primary">
+        <img src="https://cdn.discordapp.com/attachments/1029291906603163751/1128786472464551956/simpan.png" width="200" alt="logo">
+    </a>
+    <div class="navbar" id="navbarText">
+        <span class="navbar-text m-2">
+        Sistem Pamsinas Terpadu
+        </span>
+    </div>
+    </nav>
     <form method="POST" action="<?php echo e(route('save')); ?>">
     <?php echo csrf_field(); ?>
         <table class="table table-striped d-flex justify-content-center">
