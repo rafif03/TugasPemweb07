@@ -40,7 +40,7 @@
             </tr>
             <tr>
                 <td>Pass</td>
-                <td><input type="text" name="password" required></input></td>
+                <td><input type="password" name="password" required></input></td>
             </tr>
             <tr>
                 <td>Nama</td>
