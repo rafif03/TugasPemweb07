@@ -36,7 +36,9 @@
             <td><?php echo e($tagihan->TglBayar); ?></td>
             <td><?php echo e($tagihan->NoPetugas); ?></td>
             <td><?php echo e($tagihan->NoKasir); ?></td>
+            <?php if($tagihan->Status != "Lunas"): ?>
             <td><a href="<?php echo e(route('tagihansaya.edit', $tagihan->IDTagihan)); ?>" type="button" class="btn btn-info" >Edit</a></td>
+            <?php endif; ?>
         <tr>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </table>

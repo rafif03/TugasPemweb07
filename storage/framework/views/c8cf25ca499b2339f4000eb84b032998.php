@@ -5,7 +5,7 @@
     <?php echo method_field('PUT'); ?>
         <table class="table table-info table-hover table-striped">
             <tr>
-                <td colspan="2"><h3>Edit Tagihan</h3></td>
+                <td colspan="2"><h3>Edit Tagihan no. <?php echo e($tagihan->IDTagihan); ?></h3></td>
             </tr>
             <tr>
                 <td>Tanggal Dibuat</td>

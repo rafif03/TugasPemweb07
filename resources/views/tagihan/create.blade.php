@@ -6,7 +6,7 @@
     @csrf
         <table class="table table-info table-hover table-striped">
             <tr>
-                <td colspan="2"><h3>Edit Tagihan</h3></td>
+                <td colspan="2"><h3>Tambah Tagihan</h3></td>
             </tr>
             <tr>
                 <td>No Pelanggan</td>

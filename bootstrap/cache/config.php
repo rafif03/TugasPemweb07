@@ -10,7 +10,7 @@
     'locale' => 'en',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:Wa0b2KwwaDjDmrZ2RMGCDuix7zFx7xWGUxk8slviT4E=',
+    'key' => 'base64:fsAYGz2eG+C+b5iBSdNQj46PdxOcNIMmTXY3GoY/0VQ=',
     'cipher' => 'AES-256-CBC',
     'maintenance' => 
     array (
@@ -197,8 +197,8 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'E:\\xampp\\htdocs\\TugasPemweb07\\storage\\framework/cache/data',
-        'lock_path' => 'E:\\xampp\\htdocs\\TugasPemweb07\\storage\\framework/cache/data',
+        'path' => 'C:\\TugasPemweb07-copy\\storage\\framework/cache/data',
+        'lock_path' => 'C:\\TugasPemweb07-copy\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -371,13 +371,13 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'E:\\xampp\\htdocs\\TugasPemweb07\\storage\\app',
+        'root' => 'C:\\TugasPemweb07-copy\\storage\\app',
         'throw' => false,
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'E:\\xampp\\htdocs\\TugasPemweb07\\storage\\app/public',
+        'root' => 'C:\\TugasPemweb07-copy\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
         'throw' => false,
@@ -397,7 +397,7 @@
     ),
     'links' => 
     array (
-      'E:\\xampp\\htdocs\\TugasPemweb07\\public\\storage' => 'E:\\xampp\\htdocs\\TugasPemweb07\\storage\\app/public',
+      'C:\\TugasPemweb07-copy\\public\\storage' => 'C:\\TugasPemweb07-copy\\storage\\app/public',
     ),
   ),
   'hashing' => 
@@ -436,14 +436,14 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'E:\\xampp\\htdocs\\TugasPemweb07\\storage\\logs/laravel.log',
+        'path' => 'C:\\TugasPemweb07-copy\\storage\\logs/laravel.log',
         'level' => 'debug',
         'replace_placeholders' => true,
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'E:\\xampp\\htdocs\\TugasPemweb07\\storage\\logs/laravel.log',
+        'path' => 'C:\\TugasPemweb07-copy\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
         'replace_placeholders' => true,
@@ -508,7 +508,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'E:\\xampp\\htdocs\\TugasPemweb07\\storage\\logs/laravel.log',
+        'path' => 'C:\\TugasPemweb07-copy\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -575,7 +575,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'E:\\xampp\\htdocs\\TugasPemweb07\\resources\\views/vendor/mail',
+        0 => 'C:\\TugasPemweb07-copy\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -686,7 +686,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'E:\\xampp\\htdocs\\TugasPemweb07\\storage\\framework/sessions',
+    'files' => 'C:\\TugasPemweb07-copy\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -706,9 +706,9 @@
   array (
     'paths' => 
     array (
-      0 => 'E:\\xampp\\htdocs\\TugasPemweb07\\resources\\views',
+      0 => 'C:\\TugasPemweb07-copy\\resources\\views',
     ),
-    'compiled' => 'E:\\xampp\\htdocs\\TugasPemweb07\\storage\\framework\\views',
+    'compiled' => 'C:\\TugasPemweb07-copy\\storage\\framework\\views',
   ),
   'flare' => 
   array (
@@ -784,7 +784,7 @@
     array (
     ),
     'enable_runnable_solutions' => NULL,
-    'remote_sites_path' => 'E:\\xampp\\htdocs\\TugasPemweb07',
+    'remote_sites_path' => 'C:\\TugasPemweb07-copy',
     'local_sites_path' => '',
     'housekeeping_endpoint_prefix' => '_ignition',
     'settings_file_path' => '',
