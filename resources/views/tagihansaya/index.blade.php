@@ -38,7 +38,9 @@
             <td>{{ $tagihan->TglBayar }}</td>
             <td>{{ $tagihan->NoPetugas}}</td>
             <td>{{ $tagihan->NoKasir }}</td>
+            @if($tagihan->Status != "Lunas")
             <td><a href="{{ route('tagihansaya.edit', $tagihan->IDTagihan) }}" type="button" class="btn btn-info" >Edit</a></td>
+            @endif
         <tr>
         @endforeach
     </table>

@@ -13,10 +13,23 @@
             margin-top: 10%;
             width:50%;
         }
-
+        body{
+            background-attachment: fixed;
+            background-image: url(https://img.freepik.com/premium-photo/watercolor-light-gray-gradient-background-texture_145343-639.jpg?w=2000);
+        }
     </style>
 </head>
 <body>
+    <nav class="navbar navbar-light">
+    <a class="navbar-brand text-primary">
+        <img src="https://cdn.discordapp.com/attachments/1029291906603163751/1128786472464551956/simpan.png" width="200" alt="logo">
+    </a>
+    <div class="navbar" id="navbarText">
+        <span class="navbar-text m-2">
+        Sistem Pamsinas Terpadu
+        </span>
+    </div>
+    </nav>
     <form method="POST" action="<?php echo e(route('ceklogin')); ?>">
     <?php echo csrf_field(); ?>
         <table class="table table-striped d-flex justify-content-center">
@@ -27,7 +40,7 @@
             </tr>
             <tr>
                 <td>Pass</td>
-                <td><input type="text" name="password" required></input></td>
+                <td><input type="password" name="password" required></input></td>
             </tr>
             <tr>
                 <td>Don't Have Account?</td>
